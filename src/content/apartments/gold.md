@@ -1,0 +1,40 @@
+---
+title: "GOLD"
+description: "Przestrzeń, która zachwyca luksusowym wykończeniem i dbałością o każdy detal, gdzie styl spotyka się z funkcjonalnością."
+slug: "gold"
+featured: true
+order: 5
+color: 'amber-600' # text-amber-600 fill-amber-600/70
+
+capacity: 4
+areaM2: 45
+beds: "1× queen + 1× sofa"
+
+priceFrom: 350
+currency: "PLN"
+
+amenities:
+  - { icon: "🍳", label: "Aneks kuchenny" }
+  - { icon: "🌲", label: "Widok na las" }
+  - { icon: "📶", label: "Wi-Fi" }
+
+cover: /src/assets/gold2.jpeg
+coverAlt: "Zewnętrzny widok na apartament Jasny"
+
+gallery:
+  - { src: /src/assets/gold1.jpeg, alt: "Salon" }
+  - { src: /src/assets/gold2.jpeg, alt: "Sypialnia" }
+  - { src: /src/assets/gold3.jpeg, alt: "Taras" }
+  - { src: /src/assets/gold4.jpeg, alt: "Taras" }
+
+seoTitle: "Apartament Jasny – osada Słoneczne Wzgórze"
+seoDescription: "Komfortowy apartament dla 4 osób z tarasem i aneksem kuchennym."
+---
+
+W Apartamencie GOLD znajdziesz dwie sypialnie. Główna to spokojna przystań z wygodnym **dużym łóżkiem małżeńskim**, której charakteru dodaje efektowna ściana z naturalnych desek. Druga sypialnia oferuje **dwa komfortowe pojedyncze łóżka**, również ozdobiona ścianą z drewna.
+
+Sercem apartamentu jest jasna i nowoczesna kuchnia z jadalnią. Czarno-białe szafki, eleganckie blaty i czarne detale tworzą funkcjonalną przestrzeń. Przestronny stół z betonu architektonicznego zaprasza do wspólnych posiłków.
+
+Łazienka w apartamencie GOLD, wykończona jasnymi kaflami i ozdobiona oryginalnymi płytkami, z pewnością umili poranki.
+
+Zarezerwuj Apartament GOLD i poczuj się wyjątkowo w otoczeniu, gdzie elegancja i komfort tworzą idealną harmonię!

@@ -1,0 +1,70 @@
+---
+import { Image } from "astro:assets";
+
+/**
+ * GalleryMosaic.astro
+ * Wzór kafelków: S, S, L, L, powtarzany dla całej tablicy.
+ * - „Small” = 1 kolumna
+ * - „Large” = 2 kolumny (od md:), na mobile wszystko 1 kolumnę
+ * - Różne proporcje (aspect-ratio) dla małych/dużych, by uzyskać efekt „większego” kafla
+ *
+ * gallery: Array<{ src: string; alt?: string }>
+ */
+
+interface ImgItem {
+	src: string;
+	alt?: string;
+}
+const {
+	gallery = [] as ImgItem[],
+	// images = {} as Record<string, ImageMetadata>,
+} = Astro.props;
+
+// helper: czy dany indeks jest „duży” wg wzoru [S,S,L,L]
+const isLarge = (i: number) => {
+	const m = i % 4;
+	return m === 2 || m === 3; // 3. i 4. w bloku
+};
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+	"/src/assets/*.{jpeg,jpg,png,gif}",
+	{ eager: true, import: "default" },
+);
+for (const item of gallery) {
+	if (!images[item.src]) {
+		throw new Error(
+			`"${item.src}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`,
+		);
+	}
+}
+---
+
+{gallery.length > 0 && (
+  <section class="container mx-auto py-4 sm:py-6">
+    <div
+      class="grid md:grid-cols-4 gap-4"
+    >
+      {gallery.map((img, i) => (
+        <figure
+          class={[
+            // kolumny: large ma rozlać się na 2 kolumny od md wzwyż
+            isLarge(i) ? "md:col-span-2 row-span-2" : "md:col-span-1",
+            // wysokości/proporcje: small jest bardziej „pionowy”, large bardziej „szeroki”
+            "relative overflow-hidden rounded-lg 2xl:rounded-2xl hover:scale-102 transition duration-300 ease-in-out",
+            isLarge(i)
+              ? "aspect-[16/10] md:aspect-[16/9]"   // „duży”
+              : "aspect-[4/3] md:aspect-[5/4]"      // „mały”
+          ].join(" ")}
+        >
+          <Image
+            src={images[img.src]}
+            alt={img.alt ?? "Galeria"}
+            loading="lazy"
+            decoding="async"
+            class="absolute inset-0 h-full w-full object-cover object-center"
+          />
+        </figure>
+      ))}
+    </div>
+  </section>
+)}

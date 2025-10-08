@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@layer components {
+	html,
+	body {
+		scrollbar-width: thin;
+		scrollbar-color: rgba(black, 0.15) transparent;
+	}
+}
+
+@theme {
+	--font-sans: "San Francisco", Arial, sans-serif;
+}

@@ -1,0 +1,66 @@
+---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import greyImage1 from "../assets/grey1.jpeg";
+import AboutPreview from "../components/AboutPreview.astro";
+import ApartmentsPreview from "../components/ApartmentsPreview.astro";
+import BaseHead from "../components/BaseHead.astro";
+import CtaBooking from "../components/CtaBooking.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Location from "../components/Location.astro";
+import NearbyAttractions from "../components/NearbyAttractions.astro";
+import OffersPreview from "../components/OffersPreview.astro";
+import Reviews from "../components/Reviews.astro";
+import WhyUs from "../components/WhyUs.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import { toCardProps, toOfferLD } from "../lib/apartments";
+
+const all = await getCollection("apartments");
+const featured = all
+	.filter((e) => e.data.featured)
+	.sort((a, b) => a.data.order - b.data.order);
+
+const items = featured.map(toCardProps);
+const offersLd = featured.map(toOfferLD);
+---
+
+<!doctype html>
+<html lang="pl">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header items={items} />
+
+    	<main>
+    		<Hero />
+            <ApartmentsPreview
+                title="Wybierz swój apartament"
+                subtitle="Komfortowe, w pełni wyposażone apartamenty"
+                basePath="/apartamenty"
+                items={items}
+            />
+
+            <WhyUs />
+            <AboutPreview
+                placeName={SITE_TITLE}
+                title="Wypocznij w naszych apartamentach"
+                intro="Komfortowe i w pełni wyposażone apartamenty położone w otoczeniu natury. To idealne miejsce na wypoczynek dla rodzin, par oraz grup przyjaciół, którzy szukają spokoju, wygody i bliskości przyrody."
+                usps={[
+                { icon: "🍳", text: "Aneksy kuchenne i wyposażenie" },
+                { icon: "🛏️", text: "Komfortowe łóżka" },
+                { icon: "🧒", text: "Przyjazne rodzinom" },
+                { icon: "📶", text: "Szybkie Wi-Fi" },
+                ]}
+            />
+            <OffersPreview />
+            <NearbyAttractions/>
+            <Reviews />
+            <Location />
+            <CtaBooking />
+    	</main>
+		<Footer />
+	</body>
+</html>
