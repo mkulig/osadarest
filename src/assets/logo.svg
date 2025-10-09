@@ -5,13 +5,15 @@
       .brand{font-family: "Times New Roman", serif}
       .osada{fill:#111; font-weight:500; font-size:170px; letter-spacing:25px}
       .rest{fill:#e53935; font-weight:500; font-size:56px; letter-spacing:30px}
-
-        @media (prefers-color-scheme: dark) {
-            .osada { fill: #FFF; }
-        }
     </style>
   </defs>
+
+  <!-- Dach -->
   <path class="roof" d="M10 160 L450 3 L890 160"/>
+
+  <!-- Napis OSADA -->
   <text class="brand osada" x="450" y="260" text-anchor="middle">OSADA</text>
+
+  <!-- Napis REST (mniejszy, pod prawą częścią) -->
   <text class="brand rest" x="535" y="305">REST</text>
 </svg>

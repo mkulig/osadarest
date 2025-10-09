@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
-import Logo from "@assets/logo_crop.png";
+import Logo from "@assets/logo.svg";
 import { SITE_TITLE } from "../consts";
 import { toCardProps } from "../lib/apartments";
 import HeaderLink from "./HeaderLink.astro";
@@ -18,7 +18,7 @@ const items = featured.map(toCardProps);
 <nav class="container mx-auto relative w-full px-4 flex items-center justify-between z-20  text-gray-700 transition-all">
 
     <a href="/">
-        <Image src={Logo} alt={SITE_TITLE} class="w-32" loading="eager"/>
+        <Image src={Logo} alt={SITE_TITLE} class="w-32 py-1" loading="eager"/>
     </a>
 
     <ul class="md:flex hidden items-center gap-8">
