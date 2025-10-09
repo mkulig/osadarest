@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import ApartmentsPreview from "../../components/ApartmentsPreview.astro";
+import MainHeader from "../../components/MainHeader.astro";
 import Layout from "../../layouts/Layout.astro";
 import { toCardProps } from "../../lib/apartments";
 
@@ -11,10 +12,11 @@ const items = all.sort((a, b) => a.data.order - b.data.order).map(toCardProps);
 	title="Wszystkie apartamenty"
 	description="Wybierz najlepszą opcję dla siebie"
 >
-    <ApartmentsPreview
-        title="Wybierz swój apartament"
-        subtitle="Komfortowe, w pełni wyposażone apartamenty"
-        basePath="/apartamenty"
-        items={items}
+    <MainHeader>
+        <span slot="title">Wybierz swój apartament </span>
+            <span slot="description">Każdy apartament został zaprojektowany z myślą o wygodzie Gości: znajdziesz tu przytulne sypialnie, aneks kuchenny, nowoczesną łazienkę oraz przestrzeń do relaksu.</span>
+    </MainHeader>
+
+    <ApartmentsPreview items={items}
     />
 </Layout>

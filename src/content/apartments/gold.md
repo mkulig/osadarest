@@ -7,28 +7,34 @@ order: 5
 color: 'amber-600' # text-amber-600 fill-amber-600/70
 
 capacity: 4
-areaM2: 45
-beds: "1× queen + 1× sofa"
+areaM2: 36
+beds: "2 × single + 1 × sofa"
 
-priceFrom: 350
+priceFrom: 250
 currency: "PLN"
 
 amenities:
-  - { icon: "🍳", label: "Aneks kuchenny" }
-  - { icon: "🌲", label: "Widok na las" }
-  - { icon: "📶", label: "Wi-Fi" }
+  - { icon: "🍳", label: "Prywatny aneks kuchenny" }
+  - { icon: "🛁", label: "Prywatna łazienka" }
+  - { icon: "🌆", label: "Widok na miasto" }
+  - { icon: "📺", label: "Telewizor z płaskim ekranem" }
+  - { icon: "🔇", label: "Dźwiękoszczelność" }
+  - { icon: "☕", label: "Ekspres do kawy" }
+  - { icon: "📶", label: "Bezpłatne Wi-Fi" }
+  - { icon: "🧴", label: "Ręczniki" }
+  - { icon: "💇‍♀️", label: "Suszarka do włosów" }
 
-cover: /src/assets/gold2.jpeg
-coverAlt: "Zewnętrzny widok na apartament Jasny"
+cover: gold2.jpeg
+coverAlt: "Wewnętrzny widok na apartament GOLD"
 
 gallery:
-  - { src: /src/assets/gold1.jpeg, alt: "Salon" }
-  - { src: /src/assets/gold2.jpeg, alt: "Sypialnia" }
-  - { src: /src/assets/gold3.jpeg, alt: "Taras" }
-  - { src: /src/assets/gold4.jpeg, alt: "Taras" }
+  - { src: gold1.jpeg, alt: "Sypialnia 1 GOLD" }
+  - { src: gold2.jpeg, alt: "Aneks kuchenny GOLD" }
+  - { src: gold3.jpeg, alt: "Łóżko w sypialni 1 GOLD" }
+  - { src: gold4.jpeg, alt: "Sypialnia 2 GOLD" }
 
-seoTitle: "Apartament Jasny – osada Słoneczne Wzgórze"
-seoDescription: "Komfortowy apartament dla 4 osób z tarasem i aneksem kuchennym."
+seoTitle: "Apartament GOLD"
+seoDescription: "Komfortowy apartament dla 4 osób z aneksem kuchennym."
 ---
 
 W Apartamencie GOLD znajdziesz dwie sypialnie. Główna to spokojna przystań z wygodnym **dużym łóżkiem małżeńskim**, której charakteru dodaje efektowna ściana z naturalnych desek. Druga sypialnia oferuje **dwa komfortowe pojedyncze łóżka**, również ozdobiona ścianą z drewna.

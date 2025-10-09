@@ -1,41 +1,39 @@
 ---
 import { Image } from "astro:assets";
-import yardImage from "../assets/yard1.jpeg";
+import yardImage from "@assets/yard1.jpeg";
 ---
 
 <section class="relative bg-white">
 <div class="mx-auto container px-4 py-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:py-24">
-
-  <!-- Tekst -->
   <div class="flex flex-col justify-center">
-    <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-        Nowoczesne apartamenty do wynajęcia w Tyliczu
+    <h1 class="text-3xl text-center md:text-start md:text-5xl font-semibold tracking-tight text-gray-900">
+        Nowoczesne apartamenty w Tyliczu – komfortowy nocleg blisko stoku i atrakcji
     </h1>
-    <p class="mt-6 text-lg leading-8 text-gray-600">
-      Odkryj elegancję i komfort w samym sercu miasta. Nasz hotel oferuje luksusowe pokoje, widok na panoramę oraz wyjątkową obsługę.
-    </p>
+    <h2 class="mt-6 text-justify text-xl leading-8 text-gray-600">
+        Wybierz <strong>Osada REST</strong> w Tyliczu – idealne miejsce na wypoczynek w górach. Zaledwie <strong>600 metrów od stacji narciarskiej MASTER-SKI</strong> i <strong>100 metrów od Restauracji Wiejska Chata</strong>. Komfort, widok na panoramę i gościnność czekają na Ciebie.
+    </h2>
     <div class="mt-8 flex gap-4">
       <a
         href="/rezerwacja"
-        class="rounded-lg bg-yellow-500 px-6 py-3 text-lg font-semibold text-black hover:bg-yellow-400 transition"
+        class="rounded-lg px-6 py-3 text-xl font-semibold text-white hover:brightness-105 transition bg-gradient-to-l from-[#ff6a00] to-[#ee0979]"
       >
         Zarezerwuj pobyt
       </a>
       <a
-        href="/apartamenty"
+        href="/blog/okolica-i-atrakcje"
         class="rounded-lg border border-gray-300 px-6 py-3 text-lg font-semibold text-gray-700 hover:bg-gray-100 transition"
       >
-        Zobacz oferty
+        Poznaj atrakcje w okolicy
       </a>
     </div>
   </div>
 
-  <!-- Zdjęcie -->
   <div class="mt-12 lg:mt-0 lg:flex lg:items-center">
     <Image
       src={yardImage}
-      alt="Widok hotelu Aurora"
+      alt="Widok osady REST w Tyliczu"
       class="w-full rounded-xl shadow-lg object-cover"
+    loading="eager"
     />
   </div>
 

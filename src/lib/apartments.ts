@@ -1,8 +1,8 @@
 import type { CollectionEntry } from "astro:content";
 
-export function toCardProps(entry: CollectionEntry<"apartmenty">) {
+export function toCardProps(entry: CollectionEntry<"apartments">) {
 	const { data } = entry;
-	const url = `/apartamenty/${data.slug}/`;
+	const url = `/apartamenty/${data.slug}`;
 	return {
 		slug: data.slug,
 		title: data.title,
@@ -21,9 +21,9 @@ export function toCardProps(entry: CollectionEntry<"apartmenty">) {
 	};
 }
 
-export function toOfferLD(entry: CollectionEntry<"apartmenty">) {
+export function toOfferLD(entry: CollectionEntry<"apartments">) {
 	const { data } = entry;
-	const url = `/apartamenty/${data.slug}/`;
+	const url = `/apartamenty/${data.slug}`;
 	return {
 		"@type": "Offer",
 		url,
@@ -42,7 +42,7 @@ export function toOfferLD(entry: CollectionEntry<"apartmenty">) {
 				name: a.label,
 				value: true,
 			})),
-			image: data.cover.jpg,
+			image: data.cover,
 		},
 		priceSpecification: data.priceFrom
 			? {

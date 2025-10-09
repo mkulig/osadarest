@@ -1,22 +1,25 @@
 ---
 import { Image } from "astro:assets";
-import Logo from "./../assets/logo_crop.png";
+import Logo from "@assets/logo_crop.png";
 import { SITE_TITLE } from "../consts";
 
-const today = new Date();
+const today = new Date().getFullYear();
 ---
 
 <footer class="container mx-auto p-4 md:py-8">
-    <div class="sm:flex sm:items-center sm:justify-between">
+    <div class="flex items-center justify-between">
         <a href="/">
-            <Image src={Logo} alt={SITE_TITLE} class="w-14"/>
+            <Image src={Logo} alt={SITE_TITLE} class="w-12" loading="lazy"/>
         </a>
-        <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+        <ul class="flex flex-wrap items-center mb-0 text-sm text-gray-500 dark:text-gray-400">
+            <li>
+                <a href="/apartamenty" class="hover:underline me-4 md:me-6">Apartamenty</a>
+            </li>
             <li>
                 <a href="/blog" class="hover:underline me-4 md:me-6">Blog</a>
             </li>
         </ul>
     </div>
-    <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-    <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">&copy; {today.getFullYear()} {SITE_TITLE}. Wszelkie prawa zastrzeżone.</span>
+    <hr class="my-2 border-gray-200 mx-auto dark:border-gray-700 lg:my-4" />
+    <span class="block text-sm text-gray-500 text-center dark:text-gray-400">&copy; {today} {SITE_TITLE}. Wszelkie prawa zastrzeżone.</span>
 </footer>

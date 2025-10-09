@@ -1,36 +1,42 @@
 ---
 title: "STYLOWY"
-description: "todo;//Gdzie tradycja spotyka się z komfortem. Wyjątkowe wnętrze z unikalnymi meblami z drewna z odzysku, opowiadające swoją historię."
+description: "Elegancka przestrzeń łącząca nowoczesny design z domowym komfortem."
 slug: "stylowy"
 featured: true
 order: 3
 color: 'teal-600' # text-teal-600 fill-teal-600/70
 
 capacity: 4
-areaM2: 45
-beds: "1× queen + 1× sofa"
+areaM2: 32
+beds: "1 × queen + 1 × double"
 
-priceFrom: 350
+priceFrom: 300
 currency: "PLN"
 
 amenities:
-  - { icon: "🍳", label: "Aneks kuchenny" }
-  - { icon: "🌲", label: "Widok na las" }
-  - { icon: "📶", label: "Wi-Fi" }
+  - { icon: "🍳", label: "Prywatny aneks kuchenny" }
+  - { icon: "🛁", label: "Prywatna łazienka" }
+  - { icon: "🌆", label: "Widok na miasto" }
+  - { icon: "📺", label: "Telewizor z płaskim ekranem" }
+  - { icon: "🔇", label: "Dźwiękoszczelność" }
+  - { icon: "☕", label: "Ekspres do kawy" }
+  - { icon: "📶", label: "Bezpłatne Wi-Fi" }
+  - { icon: "🧴", label: "Ręczniki" }
+  - { icon: "💇‍♀️", label: "Suszarka do włosów" }
 
-cover: /src/assets/stylowy1.jpeg
-coverAlt: "Zewnętrzny widok na apartament Jasny"
+cover: stylowy1.jpeg
+coverAlt: "Wewnętrzny widok na apartament STYLOWY"
 
 gallery:
-  - { src: /src/assets/stylowy1.jpeg, alt: "Salon" }
-  - { src: /src/assets/stylowy2.jpeg, alt: "Sypialnia" }
-  - { src: /src/assets/stylowy3.jpeg, alt: "Taras" }
-  - { src: /src/assets/stylowy4.jpeg, alt: "Taras" }
-  - { src: /src/assets/stylowy5.jpeg, alt: "Taras" }
+  - { src: stylowy1.jpeg, alt: "Sypialnia 1 STYLOWY" }
+  - { src: stylowy2.jpeg, alt: "Łóżko w sypialni 1 STYLOWY" }
+  - { src: stylowy3.jpeg, alt: "Sypialnia 2 STYLOWY" }
+  - { src: stylowy4.jpeg, alt: "Aneks kuchenny STYLOWY" }
+  - { src: stylowy5.jpeg, alt: "Łazienka STYLOWY" }
 
 
-seoTitle: "Apartament Jasny – osada Słoneczne Wzgórze"
-seoDescription: "Komfortowy apartament dla 4 osób z tarasem i aneksem kuchennym."
+seoTitle: "Apartament STYLOWY"
+seoDescription: "Komfortowy apartament dla 4 osób z aneksem kuchennym."
 ---
 
 Oferujemy komfort dla każdego: przestronne duże łóżko małżeńskie dla par oraz osobna sypialnia z dwoma pojedynczymi łóżkami dla rodziny czy przyjaciół.

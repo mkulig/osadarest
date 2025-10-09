@@ -7,30 +7,36 @@ order: 2
 color: 'yellow-900' # text-yellow-900 fill-yellow-900/70
 
 capacity: 4
-areaM2: 45
-beds: "1× queen + 1× sofa"
+areaM2: 40
+beds: "1 × queen + 2 × single"
 
-priceFrom: 350
+priceFrom: 400
 currency: "PLN"
 
 amenities:
-  - { icon: "🍳", label: "Aneks kuchenny" }
-  - { icon: "🌲", label: "Widok na las" }
-  - { icon: "📶", label: "Wi-Fi" }
+  - { icon: "🍳", label: "Prywatny aneks kuchenny" }
+  - { icon: "🛁", label: "Prywatna łazienka" }
+  - { icon: "🌆", label: "Widok na miasto" }
+  - { icon: "📺", label: "Telewizor z płaskim ekranem" }
+  - { icon: "🔇", label: "Dźwiękoszczelność" }
+  - { icon: "☕", label: "Ekspres do kawy" }
+  - { icon: "📶", label: "Bezpłatne Wi-Fi" }
+  - { icon: "🧴", label: "Ręczniki" }
+  - { icon: "💇‍♀️", label: "Suszarka do włosów" }
 
-cover: /src/assets/goral1.jpeg
-coverAlt: "Zewnętrzny widok na apartament Jasny"
+cover: goral1.jpeg
+coverAlt: "Wewnętrzny widok na apartament GÓRAL"
 
 gallery:
-  - { src: /src/assets/goral1.jpeg, alt: "Salon" }
-  - { src: /src/assets/goral2.jpeg, alt: "Sypialnia" }
-  - { src: /src/assets/goral3.jpeg, alt: "Taras" }
-  - { src: /src/assets/goral4.jpeg, alt: "Taras" }
-  - { src: /src/assets/goral5.jpeg, alt: "Taras" }
-  - { src: /src/assets/goral6.jpeg, alt: "Taras" }
+  - { src: goral1.jpeg, alt: "Sypialnia 1 GÓRAL" }
+  - { src: goral2.jpeg, alt: "Łóżko w sypialni 1 GÓRAL" }
+  - { src: goral3.jpeg, alt: "Sypialnia 2 GÓRAL" }
+  - { src: goral4.jpeg, alt: "Aneks kuchenny GÓRAL" }
+  - { src: goral5.jpeg, alt: "Korytarz GÓRAL" }
+  - { src: goral6.jpeg, alt: "Łazienka GÓRAL" }
 
-seoTitle: "Apartament Jasny – osada Słoneczne Wzgórze"
-seoDescription: "Komfortowy apartament dla 4 osób z tarasem i aneksem kuchennym."
+seoTitle: "Apartament GÓRALe"
+seoDescription: "Komfortowy apartament dla 4 osób z aneksem kuchennym."
 ---
 
 Główna sypialnia to spokojna przystań z **dużym, ręcznie wykonanym łożem dwuosobowym** z drewna z dawnego budynku. Druga sypialnia oferuje **dwa, również unikatowe, ręcznie robione pojedyncze łóżka** z drewna z odzysku.

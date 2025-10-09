@@ -1,10 +1,9 @@
 ---
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
-import Logo from "./../assets/logo_crop.png";
+import Logo from "@assets/logo_crop.png";
 import { SITE_TITLE } from "../consts";
 import { toCardProps } from "../lib/apartments";
-import type { ApartmentItem } from "./ApartmentsPreview.astro";
 import HeaderLink from "./HeaderLink.astro";
 
 const all = await getCollection("apartments");
@@ -19,18 +18,26 @@ const items = featured.map(toCardProps);
 <nav class="container mx-auto relative w-full px-4 flex items-center justify-between z-20  text-gray-700 transition-all">
 
     <a href="/">
-        <Image src={Logo} alt={SITE_TITLE} class="w-32"/>
+        <Image src={Logo} alt={SITE_TITLE} class="w-32" loading="eager"/>
     </a>
 
-    <ul class="md:flex hidden items-center gap-10">
+    <ul class="md:flex hidden items-center gap-8">
+        <li>
+            <HeaderLink class="hover:text-gray-500/80 transition p-2" href={'/apartamenty'}>Apartamenty</HeaderLink>
+        </li>
         {items.map((item) => (
-          <li><a class="hover:text-gray-500/80 transition" href={'/apartamenty/'+item.slug}>{item.title} Apartament</a></li>
+          <li>
+              <HeaderLink class="hover:text-gray-500/80 transition p-2" href={'/apartamenty/'+item.slug}>{item.title}</HeaderLink>
+          </li>
         ))}
+          <li>
+              <HeaderLink class="hover:text-gray-500/80 transition p-2" href={'/blog'}>Blog</HeaderLink>
+          </li>
     </ul>
 
-    <button type="button" class="bg-white text-gray-600 border border-gray-300 md:inline hidden text-sm hover:bg-gray-50 active:scale-95 transition-all w-40 h-11 rounded-full">
-        Rezerwacje
-    </button>
+    <a href="/rezerwacja" class="bg-white text-gray-600 border border-gray-300 md:inline hidden hover:bg-gray-50 active:scale-95 transition-all px-6 py-2 rounded-full">
+        <span class="relative inline-flex size-3">  <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#ee0979] opacity-75"></span>  <span class="relative inline-flex size-3 rounded-full bg-[#ee0979]"></span></span>   <span class="ms-2">Rezerwacja</span>
+    </a>
 
     <button aria-label="menu-btn" type="button" class="menu-btn inline-block md:hidden active:scale-90 transition">
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="#000">
@@ -38,16 +45,24 @@ const items = featured.map(toCardProps);
         </svg>
     </button>
 
-    <div class="mobile-menu absolute top-[70px] left-0 w-full bg-white p-6 hidden md:hidden">
+    <div class="mobile-menu absolute top-[55px] left-0 w-full bg-white p-6 hidden md:hidden">
         <ul class="flex flex-col space-y-4 text-lg">
+            <li>
+                <HeaderLink class="p-2" href={'/apartamenty'}>Apartamenty</HeaderLink>
+            </li>
             {items.map((item) => (
-              <li><a class="text-sm" href={'/apartamenty/'+item.slug}>{item.title} Apartament</a></li>
+              <li>
+                  <HeaderLink class="p-2" href={'/apartamenty/'+item.slug}>{item.title}</HeaderLink>
+              </li>
             ))}
+              <li>
+                  <HeaderLink class="p-2" href={'/blog'}>Blog</HeaderLink>
+              </li>
         </ul>
 
-        <button type="button" class="bg-white text-gray-600 border border-gray-300 mt-6 text-sm hover:bg-gray-50 active:scale-95 transition-all w-40 h-11 rounded-full">
-            Rezerwacje
-        </button>
+        <a href="/rezerwacja" class="bg-white text-gray-600 border border-gray-300 md:inline hidden text-sm hover:bg-gray-50 active:scale-95 transition-all px-6 py-2 rounded-full">
+                Rezerwacja
+        </a>
     </div>
 </nav>
 </header>

@@ -1,134 +1,61 @@
 ---
-interface Attraction {
-	name: string;
-	desc: string;
-	icon?: string;
-}
-
-interface Category {
-	city: string;
-	items: Attraction[];
-}
-
-const {
-	title = "Okolica i atrakcje",
-	intro = "Okolica Apartamentów Osada Rest Tylicz to prawdziwa skarbnica atrakcji turystycznych. Niezależnie od pory roku, znajdziesz tu coś dla siebie – od górskich wędrówek po historyczne zabytki i regionalne przysmaki.",
-	categories = [
-		{
-			city: "Tylicz",
-			items: [
-				{
-					icon: "⛷️",
-					name: "Stacja Narciarska Master-Ski",
-					desc: "Położona zaledwie 600 m od naszych apartamentów. Zimą to idealne miejsce dla narciarzy i snowboardzistów. Latem to doskonała baza wypadowa na piesze i rowerowe wycieczki po Beskidzie Sądeckim.",
-				},
-				{
-					icon: "💧",
-					name: "Pijalnia Wód Mineralnych",
-					desc: "Odwiedź to urocze miejsce i spróbuj leczniczych wód mineralnych prosto z lokalnych źródeł, bogatych w minerały i jod. To doskonały sposób na regenerację sił.",
-				},
-				{
-					icon: "⛪",
-					name: "Cerkiew św. Piotra i Pawła",
-					desc: "Drewniana cerkiew greckokatolicka z 1880 roku, wpisana na listę obiektów Szlaku Architektury Drewnianej. Urokliwa i pełna historii.",
-				},
-				{
-					icon: "🥾",
-					name: "Szlak na Górę Jawor",
-					desc: "W pobliżu Tylicza rozpoczyna się kilka szlaków turystycznych, w tym łatwa trasa na Jawor – idealna na rodzinne spacery z pięknymi widokami.",
-				},
-			],
-		},
-		{
-			city: "Krynica-Zdrój",
-			items: [
-				{
-					icon: "⛰️",
-					name: "Góra Parkowa",
-					desc: "Jedno z najbardziej urokliwych miejsc w Krynicy. Wjedź na szczyt kolejką linowo-terenową, podziwiaj widoki i zrelaksuj się w ogrodach.",
-				},
-				{
-					icon: "🚡",
-					name: "Kolej Gondolowa na Jaworzynę",
-					desc: "Najdłuższa kolejka gondolowa w Polsce. Wjazd na szczyt to niezapomniane przeżycie, a panorama Tatr, Pienin i Beskidów jest zachwycająca.",
-				},
-				{
-					icon: "🍸",
-					name: "Deptak i Pijalnia Główna",
-					desc: 'Serce Krynicy, gdzie można spacerować, posłuchać muzyki i spróbować słynnych wód leczniczych, takich jak "Kryniczanka" czy "Zuber".',
-				},
-				{
-					icon: "🗼",
-					name: "Wieża widokowa w Krynicy-Zdroju",
-					desc: "Nowoczesna konstrukcja, która oferuje spacer w koronach drzew i zapierający dech w piersiach widok na okoliczne góry.",
-				},
-				{
-					icon: "🖼️",
-					name: "Muzeum Nikifora",
-					desc: "Dla miłośników sztuki, muzeum poświęcone jednemu z najwybitniejszych artystów prymitywistów.",
-				},
-			],
-		},
-		{
-			city: "Muszyna",
-			items: [
-				{
-					icon: "🌿",
-					name: "Ogrody sensoryczne",
-					desc: "Wyjątkowy kompleks parkowy, podzielony na strefy o różnym przeznaczeniu, które pobudzają zmysły. Idealne miejsce na relaksujący spacer.",
-				},
-				{
-					icon: "🏰",
-					name: "Ruiny zamku",
-					desc: "Pozostałości średniowiecznego zamku, z których roztacza się piękny widok na miasto i Dolinę Popradu.",
-				},
-				{
-					icon: "💦",
-					name: 'Pijalnia wód mineralnych "Uzdrowiskowy Raj"',
-					desc: "Spróbuj wód mineralnych w pięknej, nowoczesnej pijalni, otoczonej zielenią.",
-				},
-				{
-					icon: "🌊",
-					name: "Zapora na Popradzie",
-					desc: "Duży zbiornik wodny, który jest idealnym miejscem do odpoczynku, wędkowania oraz spacerów.",
-				},
-			],
-		},
-	],
-} = Astro.props;
+import { Image } from "astro:assets";
+import masterSkiImage from "@assets/master-ski.jpg";
+import wiejskaChataImage from "@assets/wiejska-chata.jpg";
 ---
 
-<section class="py-10 bg-gray-50 dark:bg-slate-800 sm:py-16 lg:py-24">
-    <div class="px-4 mx-auto container sm:px-6 lg:px-8">
-        <div class="max-w-xl mx-auto text-center">
-            <h2 class="mt-6 text-3xl font-bold leading-tight text-black dark:text-slate-50 sm:text-4xl lg:text-5xl">{title}</h2>
-            <p class="mt-4 text-lg text-gray-600">{intro}</p>
+<section class="py-12 bg-gray-50">
+  <div class="max-w-5xl mx-auto px-6 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+        Okolice i atrakcje
+    </h2>
+    <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-10">
+      Wybierając pobyt w <strong>Osada REST</strong>, zyskujesz wyjątkową bliskość
+      najlepszych atrakcji regionu. To idealne miejsce zarówno dla miłośników sportów zimowych,
+      jak i osób ceniących regionalną kuchnię. A to tylko <strong>jedne z wielu atrakcji</strong>,
+      jakie czekają w okolicy!
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-white rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition overflow-hidden">
+          <Image src={masterSkiImage} alt="Stacja Narciarska MASTER-SKI"
+             class="w-full h-56 object-cover"/>
+        <div class="p-8">
+          <h3 class="text-2xl font-semibold mb-4">
+            ⛷ Stacja Narciarska MASTER-SKI
+          </h3>
+          <p class="text-gray-600 text-lg mb-6">
+            Zaledwie <span class="font-bold">600 metrów</span> od naszej osady
+            znajduje się <strong>Stacja Narciarska MASTER-SKI</strong> – doskonałe miejsce
+            do szusowania, nauki jazdy na nartach i rodzinnej zabawy na stoku.
+          </p>
         </div>
+      </div>
 
-        {categories.map((cat) => (
-        <div class="grid items-center grid-cols-1 mt-12 gap-y-10 lg:grid-cols-7 sm:mt-20 gap-x-4">
-            <div class="space-y-8 lg:pr-16 xl:pr-24 lg:col-span-4 lg:space-y-8">
-                {cat.items.map((it) => (
-                <div class="flex items-start">
-                    <span class="flex-shrink-0 text-green-500 text-3xl">{it.icon}</span>
-
-                    <div class="ml-5">
-                        <h3 class="text-xl font-semibold text-black dark:text-slate-50">{it.name}</h3>
-                        <p class="text-base text-gray-600 dark:text-slate-300">{it.desc}</p>
-                    </div>
-                </div>
-                ))}
-            </div>
-
-            <div class="lg:col-span-3 relative">
-                <div class="relative flex md:h-100 items-center justify-center rounded-2xl bg-gradient-to-r from-[#fde68a]  to-[#f59e0b] p-8 text-white">
-                <span class="text-4xl sm:text-5xl font-bold tracking-wide drop-shadow-lg">
-                    {cat.city}
-                </span>
-
-                </div>
-            </div>
-          </div>
-        ))}
+      <div class="bg-white rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition overflow-hidden">
+        <Image src={wiejskaChataImage} alt="Restauracja Wiejska Chata"
+             class="w-full h-56 object-cover"/>
+        <div class="p-8">
+          <h3 class="text-2xl font-semibold mb-4">
+            🍴 Restauracja Wiejska Chata
+          </h3>
+          <p class="text-gray-600 text-lg mb-6">
+            Zaledwie <span class="font-bold">100 metrów</span> od Osady REST
+            znajduje się <strong>Restauracja Wiejska Chata</strong>, gdzie spróbujesz
+            tradycyjnych dań regionalnych i poczujesz klimat lokalnej gościnności.
+          </p>
+        </div>
+      </div>
     </div>
+
+    <div class="mt-10 text-center">
+      <p class="text-sm md:text-base text-slate-600">
+        Szukasz atrakcji tuż obok? Zobacz rekomendacje:
+        <a href="/blog/okolica-i-atrakcje" class="font-semibold text-slate-900 underline underline-offset-4 hover:no-underline">okolica i atrakcje</a>
+        oraz
+        <a href="/blog/gdzie-dobrze-zjesc" class="font-semibold text-slate-900 underline underline-offset-4 hover:no-underline">gdzie dobrze zjeść</a>.
+      </p>
+    </div>
+  </div>
+
 </section>

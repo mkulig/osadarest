@@ -7,32 +7,37 @@ order: 1
 color: 'gray-500' # text-gray-500 fill-gray-500/70
 
 capacity: 4
-areaM2: 45
-beds: "1× queen + 1× sofa"
+areaM2: 36
+beds: "2 × single + 1 × sofa"
 
 priceFrom: 350
 currency: "PLN"
 
 amenities:
-  - { icon: "🍳", label: "Aneks kuchenny" }
-  - { icon: "🌲", label: "Widok na las" }
-  - { icon: "📶", label: "Wi-Fi" }
+  - { icon: "🍳", label: "Prywatny aneks kuchenny" }
+  - { icon: "🛁", label: "Prywatna łazienka" }
+  - { icon: "🌆", label: "Widok na miasto" }
+  - { icon: "📺", label: "Telewizor z płaskim ekranem" }
+  - { icon: "🔇", label: "Dźwiękoszczelność" }
+  - { icon: "☕", label: "Ekspres do kawy" }
+  - { icon: "📶", label: "Bezpłatne Wi-Fi" }
+  - { icon: "🧴", label: "Ręczniki" }
+  - { icon: "💇‍♀️", label: "Suszarka do włosów" }
+  - { icon: "🪑", label: "Fotel bujany" }
 
-cover: /src/assets/grey6.jpeg
-coverAlt: "Zewnętrzny widok na apartament Jasny"
+cover: grey6.jpeg
+coverAlt: "Wewnętrzny widok na apartament GREY"
 
 gallery:
-  - { src: /src/assets/grey1.jpeg, alt: "Salon" }
-  - { src: /src/assets/grey2.jpeg, alt: "Sypialnia" }
-  - { src: /src/assets/grey3.jpeg, alt: "Taras" }
-  - { src: /src/assets/grey4.jpeg, alt: "Taras" }
-  - { src: /src/assets/grey5.jpeg, alt: "Taras" }
-  - { src: /src/assets/grey6.jpeg, alt: "Taras" }
-  - { src: /src/assets/grey7.jpeg, alt: "Taras" }
-  - { src: /src/assets/grey8.jpeg, alt: "Taras" }
+  - { src: grey1.jpeg, alt: "Łazienka GREY" }
+  - { src: grey2.jpeg, alt: "Sypialnia 2 GREY" }
+  - { src: grey3.jpeg, alt: "Aneks kuchenny GREY" }
+  - { src: grey4.jpeg, alt: "Sypialnia 1 GREY" }
+  - { src: grey5.jpeg, alt: "Salon GREY" }
+  - { src: grey6.jpeg, alt: "Łóżko w salonie 1 GREY" }
 
-seoTitle: "Apartament Jasny – osada Słoneczne Wzgórze"
-seoDescription: "Komfortowy apartament dla 4 osób z tarasem i aneksem kuchennym."
+seoTitle: "Apartament GREY"
+seoDescription: "Komfortowy apartament dla 4 osób z aneksem kuchennym."
 ---
 
 Oferujemy komfort dla każdego: przestronne duże łóżko małżeńskie dla par oraz osobna sypialnia z dwoma pojedynczymi łóżkami dla rodziny czy przyjaciół.

@@ -39,3 +39,6 @@ build/Release
 
 # Dependency directories
 node_modules/
+
+dist/
+.astro/

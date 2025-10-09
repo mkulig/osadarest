@@ -1,42 +1,17 @@
 ---
 import { Image } from "astro:assets";
 
-/**
- * GalleryMosaic.astro
- * Wzór kafelków: S, S, L, L, powtarzany dla całej tablicy.
- * - „Small” = 1 kolumna
- * - „Large” = 2 kolumny (od md:), na mobile wszystko 1 kolumnę
- * - Różne proporcje (aspect-ratio) dla małych/dużych, by uzyskać efekt „większego” kafla
- *
- * gallery: Array<{ src: string; alt?: string }>
- */
-
 interface ImgItem {
 	src: string;
-	alt?: string;
+	alt: string;
 }
-const {
-	gallery = [] as ImgItem[],
-	// images = {} as Record<string, ImageMetadata>,
-} = Astro.props;
+const { gallery = [] as ImgItem[] } = Astro.props;
 
 // helper: czy dany indeks jest „duży” wg wzoru [S,S,L,L]
 const isLarge = (i: number) => {
 	const m = i % 4;
 	return m === 2 || m === 3; // 3. i 4. w bloku
 };
-
-const images = import.meta.glob<{ default: ImageMetadata }>(
-	"/src/assets/*.{jpeg,jpg,png,gif}",
-	{ eager: true, import: "default" },
-);
-for (const item of gallery) {
-	if (!images[item.src]) {
-		throw new Error(
-			`"${item.src}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`,
-		);
-	}
-}
 ---
 
 {gallery.length > 0 && (
@@ -57,7 +32,7 @@ for (const item of gallery) {
           ].join(" ")}
         >
           <Image
-            src={images[img.src]}
+            src={img.src}
             alt={img.alt ?? "Galeria"}
             loading="lazy"
             decoding="async"

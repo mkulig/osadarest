@@ -1,19 +1,23 @@
 ---
+import { Head } from "astro-capo";
 import BaseHead from "../components/BaseHead.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 
 const { title, description } = Astro.props;
 ---
 
+<!DOCTYPE html>
 <html lang="pl">
-	<head>
+	<Head>
 		<BaseHead title={title} description={description} />
-	</head>
+	</Head>
 
 	<body class="bg-white">
 		<Header />
 		<main class="container mx-auto px-4 py-8">
+		<Breadcrumbs/>
 			<slot />
 		</main>
 		<Footer />

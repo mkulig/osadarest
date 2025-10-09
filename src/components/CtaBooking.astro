@@ -1,18 +1,23 @@
 ---
 import { Image } from "astro:assets";
-import yardImage from "../assets/yard5.jpeg";
+import yardImage from "@assets/yard5.jpeg";
+import { CONTACT_EMAIL, CONTACT_PHONE } from "../consts";
 ---
 
-<div class="bg-white py-24 sm:py-32">
+<div class="bg-white py-8">
   <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-    <div class="relative isolate overflow-clip bg-gray-900 px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
-      <div aria-hidden="true" class="absolute right-0 top-0 -z-10 aspect-square w-full max-w-3xl translate-x-3/4 rounded-full bg-pink-500/60 blur-[10rem] lg:-top-[40rem] lg:left-1/2 lg:-translate-x-1/2"></div>
+    <div class="relative isolate overflow-clip bg-black px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
+      <div aria-hidden="true" class="absolute right-0 top-0 -z-10 aspect-square w-full max-w-3xl translate-x-3/4 rounded-full bg-[#ff6a00] blur-[10rem] lg:-top-[40rem] lg:left-1/2 lg:-translate-x-1/2"></div>
       <div class="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-24 lg:text-start">
-        <h2 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">Kontakt</h2>
-        <p class="mt-6 text-base text-gray-300">Skontaktuj się z nami, aby uzyskać więcej informacji na temat dostępnych opcji oraz usług, które oferujemy.</p>
+        <h2 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">Zarezerwuj swój pobyt</h2>
+        <p class="mt-6 text-base text-gray-300">
+            Skontaktuj się z nami, aby uzyskać szczegółowe informacje na temat
+                  <strong>apartamentów, dostępnych terminów oraz atrakcji w okolicy</strong>.
+                  Chętnie odpowiemy i pomożemy w rezerwacji pobytu.
+        </p>
         <div class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
-          <a href="#" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Zadzwoń</a>
-          <a href="#" class="text-sm font-semibold leading-6 text-white">Wyślij email</a>
+          <a href={`tel:${CONTACT_PHONE}`} class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">📞 Zadzwoń</a>
+          <a href={`mailto:${CONTACT_EMAIL}`} class="text-sm font-semibold leading-6 text-white">✉️ Wyślij e-mail</a>
         </div>
       </div>
       <div class="relative mt-16 h-80 lg:mt-8 lg:h-auto">

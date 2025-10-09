@@ -1,8 +1,53 @@
 ---
 import { Image } from "astro:assets";
-import yardImage from "../assets/yard3.jpeg";
+import MapImage from "@assets/mapa_google.png";
+import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_DISPLAY } from "../consts";
 ---
 
-<section>
-    section>>lokalizacja
+<section class="bg-gray-100">
+    <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-20 lg:px-8">
+        <div class="max-w-2xl lg:max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-extrabold text-gray-900">Lokalizacja</h2>
+            <p class="mt-4 text-lg text-gray-500">Osada znajduje się w malowniczej okolicy, otoczonej górami i przyrodą. To idealne miejsce na wypoczynek w sercu Tylicza, blisko Krynicy-Zdroju.</p>
+        </div>
+        <div class="mt-16 lg:mt-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="relative">
+                    <a class="block" href="https://maps.google.com/maps/dir//OSADA+REST+TYLICZ+Osada+3+33-383+Tylicz/@49.3969618,21.0283648,16z/data=!4m5!4m4!1m0!1m2!1m1!1s0x473e77b85e0045a9:0xb192ca3e8b653f86" target="_blank" title="Otwórz wskazówki dojazdu do Osada REST">
+                        <Image src={MapImage} alt="Lokalizacja Osada REST" class="rounded-2xl shadow-lg w-full md:h-full" loading="lazy"/>
+                        <div class="absolute top-0 start-0 bg-white m-3 shadow-sm w-50 md:w-70 rounded-xs">
+                            <div>
+                                <div class="py-2 px-3">
+                                    <div class="text-sm" style="font-weight: 700;">OSADA REST TYLICZ</div>
+                                    <div class="hidden md:block mt-1" style="font-size: 12px;">Osada 3, 33-383 Tylicz</div>
+
+                                    <a class="text-sm text-blue-500 hover:underline block mt-2" title="Wyświetl większą mapę" target="_blank" href="https://maps.google.com/maps?ll=49.396962,21.028365&amp;z=16&amp;t=m&amp;hl=pl&amp;gl=PL&amp;mapclient=embed&amp;cid=12795511861288451974" referrerpolicy="no-referrer">Wyświetl większą mapę</a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+            </div>
+                {/*
+                <div class="rounded-lg overflow-hidden">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2596.631344086874!2d21.025789876948448!3d49.39696526265426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473e77b85e0045a9%3A0xb192ca3e8b653f86!2sOSADA%20REST%20TYLICZ!5e0!3m2!1spl!2spl!4v1759998648935!5m2!1spl!2spl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa lokalizacji Osada REST" class="rounded-2xl shadow-lg  w-full md:h-full"></iframe>
+                </div>
+                */}
+                <div>
+                    <div class="max-w-full mx-auto rounded-lg overflow-hidden">
+                        <div class="px-6 py-4">
+                            <h3 class="text-lg font-medium text-gray-900">Adres</h3>
+                            <p class="mt-1 text-gray-600">ul. Osada 3</p>
+                            <p class="mt-1 text-gray-600">33-383 Tylicz</p>
+                            <p class="mt-1 text-gray-600">Polska</p>
+                        </div>
+                        <div class="border-t border-gray-200 px-6 py-4">
+                            <h3 class="text-lg font-medium text-gray-900">Kontakt</h3>
+                            <p class="mt-1 text-gray-600">Email: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></p>
+                            <p class="mt-1 text-gray-600">Telefon: <a href={`tel:${CONTACT_PHONE}`}>{CONTACT_PHONE_DISPLAY}</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>

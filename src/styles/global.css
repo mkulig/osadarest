@@ -7,8 +7,13 @@
 		scrollbar-width: thin;
 		scrollbar-color: rgba(black, 0.15) transparent;
 	}
+
+	.c-breadcrumbs__link[aria-disabled="true"] {
+		pointer-events: none;
+		cursor: default;
+	}
 }
 
 @theme {
-	--font-sans: "San Francisco", Arial, sans-serif;
+	--font-sans: var(--font-satoshi), Arial, sans-serif;
 }

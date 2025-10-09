@@ -7,28 +7,34 @@ order: 4
 color: 'stone-950 ' # text-stone-950  fill-stone-950 /70
 
 capacity: 4
-areaM2: 45
-beds: "1× queen + 1× sofa"
+areaM2: 34
+beds: "1 × queen + 2 × single"
 
 priceFrom: 350
 currency: "PLN"
 
 amenities:
-  - { icon: "🍳", label: "Aneks kuchenny" }
-  - { icon: "🌲", label: "Widok na las" }
-  - { icon: "📶", label: "Wi-Fi" }
+  - { icon: "🍳", label: "Prywatny aneks kuchenny" }
+  - { icon: "🛁", label: "Prywatna łazienka" }
+  - { icon: "🌆", label: "Widok na miasto" }
+  - { icon: "📺", label: "Telewizor z płaskim ekranem" }
+  - { icon: "🔇", label: "Dźwiękoszczelność" }
+  - { icon: "☕", label: "Ekspres do kawy" }
+  - { icon: "📶", label: "Bezpłatne Wi-Fi" }
+  - { icon: "🧴", label: "Ręczniki" }
+  - { icon: "💇‍♀️", label: "Suszarka do włosów" }
 
-cover: /src/assets/loft1.jpeg
-coverAlt: "Zewnętrzny widok na apartament Jasny"
+cover: loft1.jpeg
+coverAlt: "Wewnętrzny widok na apartament LOFT"
 
 gallery:
-  - { src: /src/assets/loft1.jpeg, alt: "Salon" }
-  - { src: /src/assets/loft2.jpeg, alt: "Sypialnia" }
-  - { src: /src/assets/loft3.jpeg, alt: "Taras" }
-  - { src: /src/assets/loft4.jpeg, alt: "Taras" }
+  - { src: loft1.jpeg, alt: "Sypialnia LOFT 1" }
+  - { src: loft2.jpeg, alt: "Sypialnia LOFT 2" }
+  - { src: loft3.jpeg, alt: "Łazienka LOFT" }
+  - { src: loft4.jpeg, alt: "Salon LOFT" }
 
-seoTitle: "Apartament Jasny – osada Słoneczne Wzgórze"
-seoDescription: "Komfortowy apartament dla 4 osób z tarasem i aneksem kuchennym."
+seoTitle: "Apartament LOFT"
+seoDescription: "Komfortowy apartament dla 4 osób z prywatną łazienką i aneksem kuchennym."
 ---
 
 W Apartamencie LOFT znajdziesz dwie sypialnie. Główna to spokojna przystań z wygodnym **dużym łóżkiem małżeńskim**, której charakteru dodaje efektowna ściana z naturalnych desek. Druga sypialnia oferuje **dwa komfortowe pojedyncze łóżka**, również ozdobiona ścianą z drewna.

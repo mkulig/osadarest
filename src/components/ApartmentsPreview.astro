@@ -1,15 +1,7 @@
 ---
-/**
- * ApartmentPreview.astro (Tailwind)
- * Sekcja listująca wybrane apartamenty na stronie głównej lub stronie /apartamenty.
- * - Responsywny grid
- * - Dostępność (alt, aria)
- * - SEO: linki do szczegółów, JSON-LD (Offer + Accommodation)
- */
-
 type Amenity = {
-	icon?: string; // emoji lub klasa ikony
-	label: string; // np. "Aneks kuchenny"
+	icon?: string;
+	label: string;
 };
 
 export type ApartmentItem = {
@@ -28,7 +20,6 @@ export type ApartmentItem = {
 	currency: string;
 	amenities: Amenity[];
 
-	// obrazy
 	cover: ImageMetadata;
 	coverAlt: string;
 	gallery: {
@@ -36,40 +27,36 @@ export type ApartmentItem = {
 		alt: string;
 	}[];
 
-	// SEO (opcjonalne)
+	// SEO
 	seoTitle?: string;
 	seoDescription?: string;
 	canonical?: string;
-
-	// powiązane wpisy (opcjonalne, np. atrakcje)
-	related?: string[];
 };
 
 interface Props {
-	title?: string;
-	subtitle?: string;
-	items?: ApartmentItem[];
-	basePath: string;
+	title: string;
+	subtitle: string;
+	items: ApartmentItem[];
 }
 
 import { Image } from "astro:assets";
 
-const { title, subtitle, basePath, items = [] } = Astro.props;
+const { title, subtitle, items } = Astro.props;
 ---
 
-<section aria-labelledby="apartments-heading" class="py-10 sm:py-12">
+<section aria-labelledby="apartments-heading" class="py-10 sm:py-12 ">
   <div class="mx-auto container px-4 sm:px-6 lg:px-8">
     <div class="mx-auto max-w-2xl text-center">
       <h2 id="apartments-heading" class="text-2xl font-semibold tracking-tight text-gray-900 sm:text-3xl">
-        {title}
+          {title}
       </h2>
-      {subtitle && <p class="mt-2 text-gray-700">{subtitle}</p>}
+      <p class="mt-2 text-gray-700">{subtitle}</p>
     </div>
 
 
     <div class="mt-8 grid grid-cols-1 gap-6 sm:mt-10 lg:grid-cols-3">
       {items.map((it) => {
-        const url = `${basePath.replace(/\/$/, "")}/${it.slug}/`;
+        const url = `apartamenty/${it.slug}`;
 
         return (
           <article class="group flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md">
@@ -95,21 +82,23 @@ const { title, subtitle, basePath, items = [] } = Astro.props;
 
             <div class="flex flex-1 flex-col p-4">
               <header>
-                <h3 class="text-xl font-semibold text-gray-900">
+                <h3 class="text-2xl font-semibold text-gray-900">
                   <a href={url} class={`hover:underline underline-offset-2 text-${it.color}`}>{it.title}</a>
                 </h3>
                 <p class="text-gray-500 text-sm pb-2">{it.description}</p>
 
-                <div class="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-gray-700">
-                  {typeof it.capacity === "number" && <span title="Liczba gości">👥 {it.capacity} os.</span>}
-                  {typeof it.areaM2 === "number" && <span title="Metraż">📐 {it.areaM2} m²</span>}
-                  {it.beds && <span title="Typy łóżek">🛏️ {it.beds}</span>}
+                <div class="mt-1 flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-sm text-gray-700">
+                  {typeof it.capacity === "number" && <strong title="Liczba gości">👥 {it.capacity} os.</strong>}
+                  {it.beds && <strong title="Typy łóżek">🛏️ {it.beds}</strong>}
+                  {typeof it.areaM2 === "number" && <strong title="Metraż">📐 {it.areaM2} m²</strong>}
                 </div>
               </header>
 
+            <hr class="my-2 text-gray-200"/>
+
               {it.amenities?.length ? (
-                <ul class="mt-3 grid grid-cols-2 gap-2 text-sm text-gray-700">
-                  {it.amenities.slice(0, 6).map((a) => (
+                <ul class="grid grid-cols-2 gap-2 text-sm text-gray-700">
+                  {it.amenities.slice(0, 10).map((a) => (
                     <li class="flex items-center gap-2">
                       {a.icon && <span class="leading-none" aria-hidden="true">{a.icon}</span>}
                       <span>{a.label}</span>
