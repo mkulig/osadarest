@@ -35,27 +35,27 @@ const { Content } = await render(room);
 
        <GalleryMosaic gallery={room.data.gallery}/>
 
-<div class="grid md:grid-cols-2 gap-4 py-4 divide-y divide-gray-200">
+<div class="grid md:grid-cols-2 gap-4 py-4 divide-y divide-gray-200 dark:divide-gray-800">
     <div class="px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
         <dt class=" text-gray-500">Maksymalna ilość gości</dt>
-        <dd class="mt-1  text-gray-900 sm:col-span-2 sm:mt-0">{room.data.capacity} osoby</dd>
+        <dd class="mt-1  text-gray-900 dark:text-gray-100 sm:col-span-2 sm:mt-0">{room.data.capacity} osoby</dd>
     </div>
     <div class="px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
         <dt class=" text-gray-500">Metraż</dt>
-        <dd class="mt-1  text-gray-900 sm:col-span-2 sm:mt-0">{room.data.areaM2} m²</dd>
+        <dd class="mt-1  text-gray-900 dark:text-gray-100 sm:col-span-2 sm:mt-0">{room.data.areaM2} m²</dd>
     </div>
     <div class="px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
         <dt class=" text-gray-500">Typy łóżek</dt>
-        <dd class="mt-1  text-gray-900 sm:col-span-2 sm:mt-0">{room.data.beds}</dd>
+        <dd class="mt-1  text-gray-900 dark:text-gray-100 sm:col-span-2 sm:mt-0">{room.data.beds}</dd>
     </div>
     <div class="px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
         <dt class=" text-gray-500">Udogodnienia</dt>
-        <dd class="mt-1  text-gray-900 sm:col-span-2 sm:mt-0">{room.data.amenities.map(a => a.label).join(', ')}</dd>
+        <dd class="mt-1  text-gray-900  dark:text-gray-100 sm:col-span-2 sm:mt-0">{room.data.amenities.map(a => a.label).join(', ')}</dd>
     </div>
     <div></div>
 </div>
 
-       <div class="prose prose-xl mx-auto">
+       <div class="prose dark:prose-invert prose-xl mx-auto">
            <Content />
 		</div>
     </article>

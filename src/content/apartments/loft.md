@@ -4,7 +4,7 @@ description: "Przestrzeń, która łączy miejski sznyt z nowoczesnym ciepłem d
 slug: "loft"
 featured: true
 order: 4
-color: 'stone-950 ' # text-stone-950  fill-stone-950 /70
+color: 'stone-700 ' # text-stone-700  fill-stone-700/70
 
 capacity: 4
 areaM2: 34

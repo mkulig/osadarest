@@ -44,13 +44,13 @@ import { Image } from "astro:assets";
 const { title, subtitle, items } = Astro.props;
 ---
 
-<section aria-labelledby="apartments-heading" class="py-10 sm:py-12 ">
+<section aria-labelledby="apartments-heading" class="py-10 sm:py-12">
   <div class="mx-auto container px-4 sm:px-6 lg:px-8">
     <div class="mx-auto max-w-2xl text-center">
-      <h2 id="apartments-heading" class="text-2xl font-semibold tracking-tight text-gray-900 sm:text-3xl">
+      <h2 id="apartments-heading" class="text-2xl font-semibold tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl">
           {title}
       </h2>
-      <p class="mt-2 text-gray-700">{subtitle}</p>
+      <p class="mt-2 text-gray-700 dark:text-gray-300 propose">{subtitle}</p>
     </div>
 
 
@@ -59,7 +59,7 @@ const { title, subtitle, items } = Astro.props;
         const url = `apartamenty/${it.slug}`;
 
         return (
-          <article class="group flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md">
+          <article class="group flex flex-col overflow-hidden rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-900 shadow-sm transition hover:shadow-md">
             <a href={url} class="relative block aspect-[4/3] w-full overflow-hidden">
               <picture>
                   <Image
@@ -82,22 +82,22 @@ const { title, subtitle, items } = Astro.props;
 
             <div class="flex flex-1 flex-col p-4">
               <header>
-                <h3 class="text-2xl font-semibold text-gray-900">
+                <h3 class="text-2xl font-semibold">
                   <a href={url} class={`hover:underline underline-offset-2 text-${it.color}`}>{it.title}</a>
                 </h3>
                 <p class="text-gray-500 text-sm pb-2">{it.description}</p>
 
-                <div class="mt-1 flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-sm text-gray-700">
+                <div class="mt-1 flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-sm text-gray-700 dark:text-gray-300">
                   {typeof it.capacity === "number" && <strong title="Liczba gości">👥 {it.capacity} os.</strong>}
                   {it.beds && <strong title="Typy łóżek">🛏️ {it.beds}</strong>}
                   {typeof it.areaM2 === "number" && <strong title="Metraż">📐 {it.areaM2} m²</strong>}
                 </div>
               </header>
 
-            <hr class="my-2 text-gray-200"/>
+            <hr class="my-2 text-gray-200 dark:text-gray-700"/>
 
               {it.amenities?.length ? (
-                <ul class="grid grid-cols-2 gap-2 text-sm text-gray-700">
+                <ul class="grid grid-cols-2 gap-2 text-sm text-gray-700 dark:text-gray-300">
                   {it.amenities.slice(0, 10).map((a) => (
                     <li class="flex items-center gap-2">
                       {a.icon && <span class="leading-none" aria-hidden="true">{a.icon}</span>}
@@ -109,16 +109,16 @@ const { title, subtitle, items } = Astro.props;
 
               <div class="mt-4 flex items-center justify-between">
                 {it.priceFrom && it.currency ? (
-                  <p class="text-base font-semibold text-gray-900">
+                  <p class="text-base font-semibold text-gray-900 dark:text-gray-100">
                     <span class="mr-1 align-middle">od</span>
                     <span class="align-middle">{it.priceFrom} {it.currency}</span>
-                    <span class="ml-1 text-sm font-normal text-gray-600">/ noc</span>
+                    <span class="ml-1 text-sm font-normal text-gray-600 dark:text-gray-400">/ noc</span>
                   </p>
                 ) : <span />}
 
                 <a
                   href={url}
-                  class="inline-flex items-center rounded-lg border border-gray-900 px-3 py-2 text-sm font-semibold text-gray-900 transition hover:bg-gray-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2"
+                  class="inline-flex items-center rounded-lg border border-gray-900 dark:border-gray-100 px-3 py-2 font-semibold text-gray-900 dark:text-gray-100 transition dark:hover:bg-gray-100 hover:bg-gray-900 hover:text-white  dark:hover:text-black focus:outline-none focus:ring-2 focus:ring-gray-900  dark:focus:ring-gray-100 focus:ring-offset-2"
                 >
                   Zobacz szczegóły
                 </a>

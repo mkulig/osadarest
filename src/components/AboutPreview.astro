@@ -47,18 +47,18 @@ const items = featured.map(toCardProps);
       </div>
 
     <div class="mx-auto w-full max-w-xl">
-      <h2 id="about-heading" class="text-2xl font-semibold tracking-tight sm:text-3xl">
+      <h2 id="about-heading" class="text-2xl font-semibold tracking-tight sm:text-3xl text-gray-900 dark:text-gray-100">
           Wypocznij w naszych apartamentach
       </h2>
 
-      <p class="mt-3 text-base" itemprop="description">
+      <p class="mt-3 text-gray-600 dark:text-gray-400" itemprop="description">
           Komfortowe i w pełni wyposażone apartamenty położone w sercu natury.
                To <strong>idealny nocleg w górach</strong> dla rodzin, par i grup przyjaciół,
                którzy szukają spokoju, wygody i bliskości atrakcji Tylicza.
       </p>
 
       {usps?.length > 0 && (
-        <ul class="mt-5 grid list-none grid-cols-1 gap-3 p-0 sm:grid-cols-2">
+        <ul class="mt-5 grid list-none grid-cols-1 gap-3 p-0 sm:grid-cols-2 text-gray-600 dark:text-gray-400">
           {usps.map((u) => (
             <li class="flex items-start gap-2">
               {u.icon && <span class="text-lg leading-none" aria-hidden="true">{u.icon}</span>}

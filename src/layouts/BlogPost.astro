@@ -10,23 +10,23 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
 <Layout title={title} description={description}>
-			<article class="mx-auto md:w-1/2">
-				<div>
-					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" class="rounded-xl shadow-lg w-full" />}
-				</div>
-				<h1 class="text-5xl mt-2">{title}</h1>
-				<div class="text-gray-500">
-					Opublikowano <FormattedDate date={pubDate} />
-					{
-						updatedDate && (
-								<span>| Ostatnia aktualizacja <FormattedDate date={updatedDate} /></span>
-						)
-					}
-				</div>
+	<article class="mx-auto md:w-1/2">
+		<div>
+			{heroImage && <Image width={1020} height={510} src={heroImage} alt="" class="rounded-xl shadow-lg dark:shadow-white/20 w-full" />}
+		</div>
+		<div class="text-gray-600 dark:text-gray-400 text-end my-1">
+			Opublikowano <FormattedDate date={pubDate} />
+			{
+				updatedDate && (
+						<span>| Ostatnia aktualizacja <FormattedDate date={updatedDate} /></span>
+				)
+			}
+		</div>
+		<h1 class="text-5xl mt-2 text-dark dark:text-white">{title}</h1>
 
-				<hr class="my-8"/>
-				<div class="prose dark:prose-invert max-w-full">
-					<slot />
-				</div>
-			</article>
+		<hr class="my-8 text-gray-300 dark:text-gray-700"/>
+		<div class="prose dark:prose-invert max-w-full">
+			<slot />
+		</div>
+	</article>
 </Layout>
