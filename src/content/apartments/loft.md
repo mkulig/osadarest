@@ -4,14 +4,18 @@ description: "Przestrzeń, która łączy miejski sznyt z nowoczesnym ciepłem d
 slug: "loft"
 featured: true
 order: 4
-color: 'stone-700 ' # text-stone-700  fill-stone-700/70
+color: {
+  text: 'text-stone-700',
+  fill: 'fill-stone-700/70',
+  gradient: 'from-stone-500 to-stone-800/80'
+}
 
 capacity: 4
 areaM2: 34
-beds: "1 × queen + 2 × single"
+beds: "1 małżeńskie + 2 pojedyncze"
 
-priceFrom: 350
-currency: "PLN"
+# priceFrom: 350
+# currency: "PLN"
 
 amenities:
   - { icon: "🍳", label: "Prywatny aneks kuchenny" }

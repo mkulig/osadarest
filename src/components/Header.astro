@@ -12,31 +12,44 @@ const featured = all
 	.sort((a, b) => a.data.order - b.data.order);
 
 const items = featured.map(toCardProps);
+
+const menu = [
+	{ title: "Lokalizacja", href: "/#lokalizacja" },
+	{ title: "Opinie", href: "/#opinie" },
+	{ title: "Apartamenty", href: "/apartamenty" },
+	...items.map((item) => ({
+		title: item.title,
+		href: `/apartamenty/${item.slug}`,
+	})),
+	{ title: "Blog", href: "/blog" },
+];
 ---
 
 <header class="sticky top-0 z-20 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:bg-gray-900 shadow-sm dark:shadow-white/20">
-  <nav class="container relative z-10 mx-auto flex w-full items-center justify-between px-4 py-2 text-slate-900 dark:text-white" aria-label="Główna nawigacja">
+  <nav class="container relative z-10 mx-auto flex w-full items-center justify-between px-4 py-2 text-gray-900 dark:text-white" aria-label="Główna nawigacja">
     <a href="/">
         <Image src={Logo} alt={SITE_TITLE} class="w-32 py-1 dark:hidden" loading="eager"/>
         <strong class="hidden dark:inline">{SITE_TITLE}</strong>
     </a>
 
     <ul class="md:flex hidden items-center gap-8">
-        <li>
-            <HeaderLink class="hover:text-gray-500/80 dark:hover:text-gray-300 transition p-2" href={'/apartamenty'}>Apartamenty</HeaderLink>
-        </li>
-        {items.map((item) => (
-          <li>
-              <HeaderLink class="hover:text-gray-500/80 dark:hover:text-gray-300 transition p-2" href={'/apartamenty/'+item.slug}>{item.title}</HeaderLink>
-          </li>
-        ))}
-          <li>
-              <HeaderLink class="hover:text-gray-500/80 dark:hover:text-gray-300 transition p-2" href={'/blog'}>Blog</HeaderLink>
-          </li>
+        {menu.map((link) => (
+            <li>
+              <HeaderLink
+                class="hover:text-gray-500/80 dark:hover:text-gray-300 transition p-2"
+                href={link.href}
+              >
+                {link.title}
+              </HeaderLink>
+            </li>
+          ))}
     </ul>
 
-    <a href="/rezerwacja" class="bg-white dark:bg-gray-900 text-gray-600 border border-gray-300 dark:border-gray-700 md:inline hidden hover:bg-gray-50 dark:hover:bg-gray-700 active:scale-95 transition-all px-6 py-2 rounded-full dark:text-white">
-        <span class="relative inline-flex size-3">  <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#ee0979] opacity-75"></span>  <span class="relative inline-flex size-3 rounded-full bg-[#ee0979]"></span></span>   <span class="ms-2">Rezerwacja</span>
+    <a
+      href="/rezerwacja"
+      class="rounded-full px-4 py-1.5 hover:brightness-105 transition border-2 border-[#ff6a00]  text-[#ff6a00] shadow-lg transform duration-300 hover:scale-102"
+    >
+        Rezerwacja
     </a>
 
     <button aria-label="menu-btn" type="button" class="menu-btn inline-block md:hidden active:scale-90 transition">
@@ -45,24 +58,19 @@ const items = featured.map(toCardProps);
         </svg>
     </button>
 
-    <div class="mobile-menu absolute top-[68px] left-0 w-full bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:bg-gray-900 dark:supports-[backdrop-filter]:bg-gray-950/90 p-6 hidden md:hidden">
+    <div class="mobile-menu absolute top-[68px] left-0 w-full bg-white  dark:bg-gray-900 p-6 hidden md:hidden">
         <ul class="flex flex-col space-y-4 text-lg">
-            <li>
-                <HeaderLink class="p-2" href={'/apartamenty'}>Apartamenty</HeaderLink>
-            </li>
-            {items.map((item) => (
-              <li>
-                  <HeaderLink class="p-2" href={'/apartamenty/'+item.slug}>{item.title}</HeaderLink>
-              </li>
-            ))}
-              <li>
-                  <HeaderLink class="p-2" href={'/blog'}>Blog</HeaderLink>
-              </li>
+            {menu.map((link) => (
+                <li>
+                  <HeaderLink
+                    class="p-2"
+                    href={link.href}
+                  >
+                    {link.title}
+                  </HeaderLink>
+                </li>
+              ))}
         </ul>
-
-        <a href="/rezerwacja" class="bg-white text-gray-600 border border-gray-300 md:inline hidden text-sm hover:bg-gray-50 active:scale-95 transition-all px-6 py-2 rounded-full">
-                Rezerwacja
-        </a>
     </div>
 </nav>
 </header>

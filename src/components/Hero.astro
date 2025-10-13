@@ -4,10 +4,10 @@ import yardImage from "@assets/yard1.jpeg";
 ---
 
 <section class="relative">
-<div class="mx-auto container px-4 py-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:py-24">
+<div class="mx-auto container px-4 py-10 lg:grid lg:grid-cols-2 lg:gap-12 lg:py-24">
   <div class="flex flex-col justify-center">
-    <h1 class="text-3xl text-center md:text-start md:text-5xl font-semibold tracking-tight text-gray-900 dark:text-gray-100">
-        Nowoczesne apartamenty w Tyliczu – komfortowy nocleg blisko stoku i atrakcji
+    <h1 class="text-3xl text-center md:text-start md:leading-15 md:text-5xl font-semibold tracking-tight text-gray-900 dark:text-gray-100">
+        <strong>Nowoczesne apartamenty w Tyliczu</strong> - komfortowy nocleg blisko stoku i atrakcji
     </h1>
     <h2 class="mt-6 text-justify text-xl leading-8 text-gray-600 dark:text-gray-300">
         Wybierz <strong>Osada REST</strong> w Tyliczu – idealne miejsce na wypoczynek w górach. Zaledwie <strong>600 metrów od stacji narciarskiej MASTER-SKI</strong> i <strong>100 metrów od Restauracji Wiejska Chata</strong>. Komfort, widok na panoramę i gościnność czekają na Ciebie.
@@ -28,13 +28,51 @@ import yardImage from "@assets/yard1.jpeg";
     </div>
   </div>
 
-  <div class="mt-12 lg:mt-0 lg:flex lg:items-center">
+  <div class="relative mt-12 lg:mt-0 lg:flex lg:items-center">
     <Image
       src={yardImage}
       alt="Widok osady REST w Tyliczu"
       class="w-full rounded-xl shadow-lg dark:shadow-white/20 object-cover"
     loading="eager"
     />
+
+    <div class="md:absolute max-md:my-3 top-5 left-5">
+        <span class="inline-flex max-md:justify-between items-center gap-3 rounded-xl border border-gray-200 bg-white p-3 shadow-sm dark:border-white/10 dark:bg-gray-900 w-full">
+        <div class="bg-[#003580] text-white rounded-lg px-2 py-1 font-bold text-lg">
+            9,8
+        </div>
+        <div class="flex flex-col">
+            <span class="font-semibold text-gray-900 dark:text-gray-100">
+            Wyjątkowy
+            </span>
+            <span class="text-sm text-gray-500 dark:text-gray-400">
+            89 opinii
+            </span>
+        </div>
+        <span class="text-xs  text-gray-400 dark:text-gray-500">
+            Booking.com
+        </span>
+        </span>
+    </div>
+    <div class="md:absolute max-md:my-3 bottom-5 right-5">
+        <span class="inline-flex max-md:justify-between items-center gap-3 rounded-xl border border-gray-200 bg-white p-3 shadow-sm dark:border-white/10 dark:bg-gray-900 w-full">
+        <div class="bg-yellow-500 text-white rounded-lg px-2 py-1 font-bold text-lg">
+            5,0
+        </div>
+        <div class="flex flex-col">
+            <span class=" text-yellow-500" style="clip-path: polygon(6px 0,4.31px 3.98px,0 4.34px,3.28px 7.18px,2.29px 11.4px,6px 9.16px,9.71px 11.4px,8.72px 7.18px,12px 4.34px,7.69px 3.98px,6px 0,20px 0,18.31px 3.98px,14px 4.34px,17.28px 7.18px,16.29px 11.4px,20px 9.16px,23.71px 11.4px,22.72px 7.18px,26px 4.34px,21.69px 3.98px,20px 0,34px 0,32.31px 3.98px,28px 4.34px,31.28px 7.18px,30.29px 11.4px,34px 9.16px,37.71px 11.4px,36.72px 7.18px,40px 4.34px,35.69px 3.98px,34px 0,48px 0,46.31px 3.98px,42px 4.34px,45.28px 7.18px,44.29px 11.4px,48px 9.16px,51.71px 11.4px,50.72px 7.18px,54px 4.34px,49.69px 3.98px,48px 0,62px 0,60.31px 3.98px,56px 4.34px,59.28px 7.18px,58.29px 11.4px,62px 9.16px,65.71px 11.4px,64.72px 7.18px,68px 4.34px,63.69px 3.98px,62px 0);
+            width: 68px;
+            height: 11.4px;
+            background: linear-gradient(to right, currentcolor 70px, #80868b 0%);"/>
+            <span class="text-sm text-gray-500 dark:text-gray-400">
+            27 opinii
+            </span>
+        </div>
+        <span class="text-xs  text-gray-400 dark:text-gray-500">
+            Google
+        </span>
+        </span>
+    </div>
   </div>
 
 </div>

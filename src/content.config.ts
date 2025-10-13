@@ -24,7 +24,11 @@ const apartments = defineCollection({
 			slug: z.string().regex(/^[a-z0-9-]+$/), // kontrola slugów
 			featured: z.boolean().default(false),
 			order: z.number().default(0),
-			color: z.string(),
+			color: z.object({
+				text: z.string(),
+				fill: z.string(),
+				gradient: z.string(),
+			}),
 
 			capacity: z.number().int().positive(), // osoby
 			areaM2: z.number().positive(),

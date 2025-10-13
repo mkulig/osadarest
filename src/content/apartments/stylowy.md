@@ -4,14 +4,18 @@ description: "Elegancka przestrzeń łącząca nowoczesny design z domowym komfo
 slug: "stylowy"
 featured: true
 order: 3
-color: 'teal-600' # text-teal-600 fill-teal-600/70
+color: {
+  text: 'text-teal-600',
+  fill: 'fill-teal-600/70',
+  gradient: 'from-teal-700 to-teal-900/90'
+}
 
 capacity: 4
 areaM2: 32
-beds: "1 × queen + 1 × double"
+beds: "1 małżeńskie + 1 podwójne"
 
-priceFrom: 300
-currency: "PLN"
+# priceFrom: 300
+# currency: "PLN"
 
 amenities:
   - { icon: "🍳", label: "Prywatny aneks kuchenny" }

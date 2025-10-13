@@ -4,14 +4,18 @@ description: "Gdzie tradycja spotyka się z komfortem. Wyjątkowe wnętrze z uni
 slug: "goral"
 featured: true
 order: 2
-color: 'yellow-900' # text-yellow-900 fill-yellow-900/70
+color: {
+  text: 'text-yellow-900',
+  fill: 'fill-yellow-900/70',
+  gradient: 'from-yellow-600 to-yellow-800/80'
+}
 
 capacity: 4
 areaM2: 40
-beds: "1 × queen + 2 × single"
+beds: "1 małżeńskie + 2 pojedyncze"
 
-priceFrom: 400
-currency: "PLN"
+# priceFrom: 400
+# currency: "PLN"
 
 amenities:
   - { icon: "🍳", label: "Prywatny aneks kuchenny" }

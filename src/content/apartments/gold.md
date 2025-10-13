@@ -4,14 +4,18 @@ description: "Przestrzeń, która zachwyca luksusowym wykończeniem i dbałości
 slug: "gold"
 featured: true
 order: 5
-color: 'amber-600' # text-amber-600 fill-amber-600/70
+color: {
+  text: 'text-amber-600',
+  fill: 'fill-amber-600/70',
+  gradient: 'from-amber-600 to-amber-800/90'
+}
 
 capacity: 4
 areaM2: 36
-beds: "2 × single + 1 × sofa"
+beds: "1 małżeńskie + 2 pojedyncze"
 
-priceFrom: 250
-currency: "PLN"
+# priceFrom: 250
+#currency: "PLN"
 
 amenities:
   - { icon: "🍳", label: "Prywatny aneks kuchenny" }

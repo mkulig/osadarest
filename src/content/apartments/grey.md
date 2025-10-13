@@ -4,14 +4,18 @@ description: "Harmonijne połączenie nowoczesności i ciepła drewna. To wyjąt
 slug: "grey"
 featured: true
 order: 1
-color: 'gray-500' # text-gray-500 fill-gray-500/70
+color: {
+  text: 'text-gray-500',
+  fill: 'fill-gray-500/70',
+  gradient: 'from-gray-700 to-gray-800/60'
+}
 
 capacity: 4
 areaM2: 36
-beds: "2 × single + 1 × sofa"
+beds: "1 małżeńskie + 2 pojedyncze"
 
-priceFrom: 350
-currency: "PLN"
+# priceFrom: 350
+# currency: "PLN"
 
 amenities:
   - { icon: "🍳", label: "Prywatny aneks kuchenny" }
