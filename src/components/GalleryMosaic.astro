@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
 
 interface ImgItem {
 	src: string;
@@ -25,17 +25,18 @@ const isLarge = (i: number) => {
             // kolumny: large ma rozlać się na 2 kolumny od md wzwyż
             isLarge(i) ? "md:col-span-2 row-span-2" : "md:col-span-1",
             // wysokości/proporcje: small jest bardziej „pionowy”, large bardziej „szeroki”
-            "relative overflow-hidden rounded-lg 2xl:rounded-2xl hover:scale-102 transition duration-300 ease-in-out",
+            "relative overflow-hidden rounded-lg 2xl:rounded-2xl hover:scale-102 transition duration-300 ease-in-out fade-up",
             isLarge(i)
               ? "aspect-[16/10] md:aspect-[16/9]"   // „duży”
               : "aspect-[4/3] md:aspect-[5/4]"      // „mały”
           ].join(" ")}
         >
-          <Image
+          <Picture
             src={img.src}
             alt={img.alt ?? "Galeria"}
+            formats={["avif","webp"]}
+            fallbackFormat="webp"
             loading="lazy"
-            decoding="async"
             class="absolute inset-0 h-full w-full object-cover object-center"
           />
         </figure>

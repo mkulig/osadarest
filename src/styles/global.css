@@ -17,3 +17,27 @@
 @theme {
 	--font-sans: var(--font-satoshi), Arial, sans-serif;
 }
+
+@keyframes text-appear {
+	from {
+		opacity: 0;
+		transform: translateY(8rem);
+	}
+}
+
+@utility fade-up {
+	animation: text-appear ease-in both;
+	animation-timeline: view();
+	animation-range: 0vh 40vh;
+
+	@media (prefers-reduced-motion: reduce) {
+		/*@apply animate-none;*/
+	}
+}
+
+@layer components {
+	.prose > *,
+	.fade-up {
+		@apply fade-up;
+	}
+}

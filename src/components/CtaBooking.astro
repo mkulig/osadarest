@@ -1,12 +1,12 @@
 ---
-import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
 import yardImage from "@assets/yard5.jpeg";
 import { CONTACT_EMAIL, CONTACT_PHONE } from "../consts";
 ---
 
 <div class="py-8">
   <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-    <div class="relative isolate overflow-clip bg-black dark:bg-gray-100 px-6 pt-16 shadow-2xl dark:shadow-white/20 sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
+    <div class="relative isolate overflow-clip bg-black dark:bg-gray-100 px-6 pt-16 shadow-2xl dark:shadow-white/20 sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0 fade-up">
       <div aria-hidden="true" class="absolute right-0 top-0 -z-10 aspect-square w-full max-w-3xl translate-x-3/4 rounded-full bg-[#ff6a00] blur-[10rem] lg:-top-[40rem] lg:left-1/2 lg:-translate-x-1/2"></div>
       <div class="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-24 lg:text-start">
         <h2 class="text-3xl font-semibold tracking-tight text-white dark:text-black sm:text-4xl">Zarezerwuj swój pobyt</h2>
@@ -21,7 +21,7 @@ import { CONTACT_EMAIL, CONTACT_PHONE } from "../consts";
         </div>
       </div>
       <div class="relative mt-16 h-80 lg:mt-8 lg:h-auto">
-        <Image class="absolute left-0 top-0 w-[40rem] max-w-none rounded-2xl bg-white/5 ring-1 ring-white/10 lg:top-14" src={yardImage} alt="dashboard screenshot" />
+        <Picture class="absolute left-0 top-0 w-[40rem] max-w-none rounded-2xl bg-white/5 ring-1 ring-white/10 lg:top-14" src={yardImage} alt="dashboard screenshot" quality={50} formats={["avif","webp"]} fallbackFormat="webp" />
       </div>
     </div>
   </div>

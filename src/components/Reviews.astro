@@ -11,9 +11,9 @@ const items = [
 		source: "Google",
 	},
 	{
-		name: "Katarzyna 🇵🇱",
-		text: "Przepiękne miejsce, wszystko wygodne, nowe, czyste. Właścicieli przemili ludzie",
-		source: "Google",
+		name: "Anna 🇵🇱",
+		text: "Piękny apartament, czysty i komfortowy. Dużo udogodnień dla dzieci i dorosłych, zarówno w mieszkaniu jak i na zewnątrz. Dziękujemy za ciasteczka i soczek ❤️",
+		source: "Booking",
 	},
 	{
 		name: "Daniel 🇵🇱",
@@ -21,9 +21,14 @@ const items = [
 		source: "Google",
 	},
 	{
-		name: "Justyna 🇵🇱",
-		text: "Cudowne miejsce, otoczone górami i ciszą ❤️ Apartamenty urządzone stylowo, czyste i zadbane👌 Wyposażone w najpotrzebniejsze rzeczy codziennego użytku typu suszarka do włosów, suszarka na pranie i ręczniki, mikrofalówka czy mini ekspres. Jest tu nawet... chłodziarka do wina. Wyposażenie kuchni bez zarzutów. W otoczeniu domu znajduje się strefa wypoczynkowa, grill z altanką, palenisko i miejsce do zabawy dla dzieci 😍 Właściciele otwarci, pomocni i mili. Sam Tylicz to doskonała baza do wypadów do Krynicy Zdrój czy Muszyny 👍",
-		source: "Google",
+		name: "Magdalena 🇬🇧",
+		text: "Obiekt był dla nas świetny pod wieloma względami – od lokalizacji po nowoczesny i czysty wygląd. Gospodarze są wspaniali i przyjaźni, bardzo łatwo się z nimi skontaktować i niezwykle szybko odpowiadają na wszelkie prośby.”",
+		source: "Booking",
+	},
+	{
+		name: "Bartłomiej 🇵🇱",
+		text: "Wszystko było super, warunki wyśmienite, wszystko perfekcyjnie przygotowane, czyściutkie i spełniające wszelkie oczekiwania. Polecamy w 100 %, my w przyszłym roku na pewno wracamy 👍",
+		source: "Booking",
 	},
 	{
 		name: "Miroslav 🇸🇰",
@@ -31,49 +36,43 @@ const items = [
 		source: "Booking",
 	},
 	{
-		name: "Anna 🇵🇱",
-		text: "Piękny apartament, czysty i komfortowy. Dużo udogodnień dla dzieci i dorosłych, zarówno w mieszkaniu jak i na zewnątrz. Przemili właściciele, dziękujemy za ciasteczka i soczek ❤️",
-		source: "Booking",
+		name: "Justyna 🇵🇱",
+		text: "Cudowne miejsce, otoczone górami i ciszą ❤️ Apartamenty urządzone stylowo, czyste i zadbane👌 Wyposażone w najpotrzebniejsze rzeczy codziennego użytku typu suszarka do włosów, suszarka na pranie i ręczniki, mikrofalówka czy mini ekspres. Jest tu nawet... chłodziarka do wina. Wyposażenie kuchni bez zarzutów. W otoczeniu domu znajduje się strefa wypoczynkowa, grill z altanką, palenisko i miejsce do zabawy dla dzieci 😍 Właściciele otwarci, pomocni i mili. Sam Tylicz to doskonała baza do wypadów do Krynicy Zdrój czy Muszyny 👍",
+		source: "Google",
 	},
 	{
-		name: "Magdalena 🇬🇧",
-		text: "Obiekt był dla nas świetny pod wieloma względami – od lokalizacji po nowoczesny i czysty wygląd. Gospodarze są wspaniali i przyjaźni, bardzo łatwo się z nimi skontaktować i niezwykle szybko odpowiadają na wszelkie prośby.”",
-		source: "Booking",
-	},
-
-	{
-		name: "Bartłomiej 🇵🇱",
-		text: "Wszystko było super, warunki wyśmienite, wszystko perfekcyjnie przygotowane, czyściutkie i spełniające wszelkie oczekiwania. Polecamy w 100 %, my w przyszłym roku na pewno wracamy 👍",
-		source: "Booking",
+		name: "Katarzyna 🇵🇱",
+		text: "Przepiękne miejsce, wszystko wygodne, nowe, czyste. Właścicieli przemili ludzie",
+		source: "Google",
 	},
 ];
 ---
 
-<div class="text-gray-600 dark:text-gray-300 py-12 lg:py-20" id="opinie" >
+<section class="text-gray-600 dark:text-gray-300 py-12 lg:py-20" id="opinie" >
     <div class="container mx-auto px-6 md:px-12 xl:px-6">
 
         <div class="mb-10 space-y-4 px-6 md:px-0 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 fade-up">
                 Opinie o nas
             </h2>
-            <p class="text-sm md:text-base text-gray-600  dark:text-gray-400 mt-4">
+            <p class="text-sm md:text-base text-gray-600  dark:text-gray-400 mt-4 fade-up">
                 Dołącz do setek zadowolonych Gości, którzy wybrali nasze
                       <strong>apartamenty w górach</strong> i docenili komfort, lokalizację oraz gościnność.
             </p>
         </div>
 
 
-        <div class="md:columns-2 lg:columns-3 gap-6 space-y-6">
+        <div class="md:columns-2 lg:columns-3 gap-6 space-y-6 animate-none md:fade-up">
             {items.map((review) => (
                 <div
-                    class="aspect-auto p-6 border border-gray-100 rounded-3xl bg-white dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none">
+                    class="aspect-auto p-6 border border-gray-100 rounded-3xl bg-white dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none fade-up md:animate-none">
                     <div class="flex gap-4">
                         <div>
                             <h6 class="text-lg font-medium text-gray-700 dark:text-white i">{review.name}</h6>
                             <p class="text-xs text-gray-500 dark:text-gray-300">Opinia {review.source}</p>
                         </div>
                     </div>
-                    <p class="mt-8 italic">„{review.text}”</p>
+                    <p class="mt-6 italic">„{review.text}”</p>
                 </div>
             ))}
         </div>

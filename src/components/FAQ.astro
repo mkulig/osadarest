@@ -46,11 +46,11 @@ const items = [
 ---
 <section>
     <div class="relative mx-auto w-full py-8 px-5 font-sans sm:px-20 md:max-w-screen-lg lg:py-20">
-    <h2 class="mb-5 text-center font-sans text-4xl sm:text-5xl font-bold text-gray-900 dark:text-gray-100">Często zadawane pytania</h2>
-    <p class="mb-12 text-center text-lg text-gray-600 dark:text-gray-400">Poniżej zebraliśmy odpowiedzi na najczęściej zadawane pytania dotyczące naszych apartamentów, zasad rezerwacji oraz pobytu. Sprawdź, czy znajdziesz tu informacje, które pomogą Ci w zaplanowaniu idealnego noclegu w górach.</p>
+    <h2 class="mb-5 text-center font-sans text-4xl sm:text-5xl font-bold text-gray-900 dark:text-gray-100 fade-up">Często zadawane pytania</h2>
+    <p class="mb-12 text-center text-lg text-gray-600 dark:text-gray-400 fade-up">Poniżej zebraliśmy odpowiedzi na najczęściej zadawane pytania dotyczące naszych apartamentów, zasad rezerwacji oraz pobytu. Sprawdź, czy znajdziesz tu informacje, które pomogą Ci w zaplanowaniu idealnego noclegu w górach.</p>
     <ul class="space-y-4">
         {items.map((item, index) =>
-            <li>
+            <li class="fade-up">
                 <label for={item.id} class="relative flex flex-col rounded-md border border-gray-100 dark:border-gray-700 shadow-xs dark:shadow-white/20">
                     <input class="peer hidden" type="checkbox" id={item.id} {index == 0 ? 'checked' : ''}/>
                 <svg xmlns="http://www.w3.org/2000/svg" class="absolute right-0 top-4 ml-auto mr-5 h-4 text-gray-600 dark:text-gray-400 transition peer-checked:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">

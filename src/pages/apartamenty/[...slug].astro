@@ -18,7 +18,7 @@ const room = Astro.props;
 const { Content } = await render(room);
 ---
 
-<Layout title={`${room.data.title} apartment`} description={room.data.description}>
+<Layout title={`${room.data.title} apartament`} description={room.data.description}>
     <article>
 		<MainHeader>
             <span slot="title">
@@ -36,7 +36,7 @@ const { Content } = await render(room);
 
        <GalleryMosaic gallery={room.data.gallery}/>
 
-<div class="grid md:grid-cols-2 gap-4 py-4 divide-y divide-gray-200 dark:divide-gray-800">
+<div class="grid md:grid-cols-2 gap-4 py-4 divide-y divide-gray-200 dark:divide-gray-800 fade-up">
     <div class="px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
         <dt class=" text-gray-500">Maksymalna liczba gości</dt>
         <dd class="mt-1  text-gray-900 dark:text-gray-100 sm:col-span-2 sm:mt-0">{room.data.capacity} osoby</dd>
@@ -60,7 +60,7 @@ const { Content } = await render(room);
            <Content />
 		</div>
 
-<div class={`max-w-5xl py-16 my-10 md:px-10 max-md:text-center md:mx-auto flex flex-col md:flex-row items-center justify-between bg-gradient-to-b ${room.data.color.gradient} rounded-2xl text-white`}>
+<div class={`max-w-5xl py-16 my-10 md:px-10 max-md:text-center md:mx-auto flex flex-col md:flex-row items-center justify-between bg-gradient-to-b ${room.data.color.gradient} rounded-2xl text-white fade-up`}>
     <div>
         <h3
             class="text-4xl md:text-[46px] md:leading-[60px] font-semibold bg-gradient-to-r from-white to-white/90 text-transparent bg-clip-text test-shadow-xs">

@@ -41,10 +41,28 @@ seoTitle: "Apartament LOFT"
 seoDescription: "Komfortowy apartament dla 4 osób z prywatną łazienką i aneksem kuchennym."
 ---
 
-W Apartamencie LOFT znajdziesz dwie sypialnie. Główna to spokojna przystań z wygodnym **dużym łóżkiem małżeńskim**, której charakteru dodaje efektowna ściana z naturalnych desek. Druga sypialnia oferuje **dwa komfortowe pojedyncze łóżka**, również ozdobiona ścianą z drewna.
+## 🌟 🏡 🍽️ 🛋️ 🌄
 
-Sercem apartamentu jest jasna i nowoczesna kuchnia z jadalnią. Czarno-białe szafki, eleganckie blaty i czarne detale tworzą funkcjonalną przestrzeń. Przestronny stół z betonu architektonicznego zaprasza do wspólnych posiłków.
+**Przestrzeń, która łączy miejski sznyt z naturalnym ciepłem drewna.** Apartament LOFT w Osadzie REST to propozycja dla osób, które lubią nowoczesny design i cenią sobie wygodę, a jednocześnie szukają przytulnego miejsca na wypoczynek w górach.
 
-Łazienka to kwintesencja nowoczesnego minimalizmu. Jasnoszare płytki, stylowa okrągła lustro i biała nablatowa umywalka tworzą funkcjonalną i estetyczną przestrzeń.
+## Co czeka na Ciebie w LOFT?
+- **🛏 Dwie komfortowe sypialnie** – główna z dużym łóżkiem małżeńskim i drewnianą ścianą, druga z dwoma wygodnymi łóżkami pojedynczymi.
+- **🍳 Nowoczesna kuchnia z jadalnią** – czarno-białe szafki, eleganckie blaty i stół z betonu architektonicznego, idealny do wspólnych posiłków.
+- **🚿 Minimalistyczna łazienka** – jasnoszare płytki, stylowe lustro i nablatowa umywalka.
+- **🌄 Wyjątkowy klimat** – industrialny charakter przełamany naturalnym drewnem, który sprawia, że wnętrze jest jednocześnie stylowe i przytulne.
 
-Zarezerwuj Apartament LOFT i odkryj unikalne połączenie miejskiego stylu z naturalnym ciepłem drewna!
+## Idealny wybór, jeśli…
+- przyjeżdżasz z rodziną i chcesz mieć przestrzeń dla każdego,
+- planujesz wyjazd z przyjaciółmi i szukasz funkcjonalnego wnętrza,
+- lubisz miejski design, ale chcesz poczuć bliskość gór i natury.
+
+
+## LOFT w praktyce
+- Poranek zaczynasz od kawy w kuchni, gdzie **industrialny stół** staje się miejscem rodzinnych rozmów.
+- Po dniu spędzonym na stoku czy szlakach wracasz do apartamentu, który daje wrażenie nowoczesnego loftu w sercu gór.
+- Wieczorem relaksujesz się w minimalistycznej łazience, a potem zasypiasz w otoczeniu naturalnego drewna.
+
+---
+
+LOFT to przestrzeń, w której **miejski charakter spotyka się z górskim klimatem**.
+To doskonała baza wypadowa dla rodzin i przyjaciół, którzy cenią sobie wygodę, styl i bliskość natury.

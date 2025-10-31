@@ -44,10 +44,42 @@ seoTitle: "Apartament GREY"
 seoDescription: "Komfortowy apartament dla 4 osób z aneksem kuchennym."
 ---
 
-Oferujemy komfort dla każdego: przestronne duże łóżko małżeńskie dla par oraz osobna sypialnia z dwoma pojedynczymi łóżkami dla rodziny czy przyjaciół.
+## 🌙 🛏 🪟 ✨ ☕
 
-Aneks kuchenny z jadalnią to serce apartamentu – nowoczesne sprzęty, elegancki marmur i ciepłe drewno zapraszają do wspólnych posiłków.
+Harmonijne połączenie nowoczesności i ciepła drewna – tak w skrócie można opisać Apartament GREY w Osadzie REST. To wyjątkowe poddasze, w którym każdy element wnętrza został zaplanowany tak, aby tworzyć niepowtarzalny klimat górskiego wypoczynku.
 
-Nowoczesna łazienka z prysznicem zapewnia relaks i odświeżenie. Duże okna dachowe wpuszczają słońce, a wieczorem pozwalają podziwiać gwiazdy.
+## Poranek w GREY
 
-W GREY zadbaliśmy o detale: świeże ręczniki, miękkie koce i powitalna kawa. Idealny na romantyczny weekend czy bazę do górskich przygód.
+Dzień zaczyna się w przestronnej sypialni małżeńskiej. Duże łóżko, miękka pościel i widok wpadającego przez okna dachowe słońca gwarantują dobry nastrój od pierwszych chwil.
+Obok znajduje się druga sypialnia z dwoma pojedynczymi łóżkami – idealna dla dzieci lub przyjaciół podróżujących razem.
+
+## Smaki w sercu apartamentu
+
+Śniadanie przygotujesz w aneksie kuchennym z jadalnią, który jest sercem całego wnętrza. Nowoczesne sprzęty, elegancki marmur i ciepłe drewniane akcenty sprawiają, że wspólne posiłki mają zupełnie inny smak.
+
+Przy stole można usiąść z kubkiem kawy, otworzyć okna i poczuć świeże górskie powietrze.
+
+## Chwila relaksu
+
+Po całym dniu atrakcji czeka na Ciebie nowoczesna łazienka z prysznicem. Jasne wnętrze, funkcjonalne rozwiązania i świeże ręczniki pozwalają zregenerować siły.
+
+Wieczorem duże okna dachowe dają niepowtarzalną okazję, by… podziwiać rozgwieżdżone niebo prosto z apartamentu. To detal, który sprawia, że GREY jest wyjątkowy.
+
+## Detale, które tworzą atmosferę
+
+W GREY nic nie jest przypadkowe.
+- świeże ręczniki i pachnąca pościel,
+- miękkie koce, które otulą w chłodniejsze wieczory,
+- powitalna kawa, by dobrze zacząć pobyt.
+
+To drobiazgi, które zmieniają zwykły nocleg w prawdziwe doświadczenie.
+
+
+## Apartament GREY – dla kogo?
+- dla par, które marzą o romantycznym weekendzie w górach,
+- dla rodzin z dziećmi, które chcą mieć swoją przestrzeń,
+- dla przyjaciół planujących wspólne przygody w Tyliczu i okolicach.
+
+---
+
+Apartament GREY to doskonała baza wypadowa do górskich wędrówek i jednocześnie miejsce, w którym można się zatrzymać, odetchnąć i poczuć klimat poddasza z duszą.

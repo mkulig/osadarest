@@ -43,10 +43,50 @@ seoTitle: "Apartament STYLOWY"
 seoDescription: "Komfortowy apartament dla 4 osób z aneksem kuchennym."
 ---
 
-Oferujemy komfort dla każdego: przestronne duże łóżko małżeńskie dla par oraz osobna sypialnia z dwoma pojedynczymi łóżkami dla rodziny czy przyjaciół.
+## 💎 🛏 ☕ 🛋 🌅
 
-Aneks kuchenny z jadalnią to serce apartamentu – nowoczesne sprzęty, elegancki marmur i ciepłe drewno zapraszają do wspólnych posiłków.
+## elegancja w górskim otoczeniu
 
-Nowoczesna łazienka z prysznicem zapewnia relaks i odświeżenie. Duże okna dachowe wpuszczają słońce, a wieczorem pozwalają podziwiać gwiazdy.
+Apartament STYLOWY w Osadzie REST to przestrzeń, w której nowoczesny design spotyka się z ciepłem domowej atmosfery. To propozycja dla tych, którzy cenią sobie wygodę, elegancję i dbałość o szczegóły.
 
-W GREY zadbaliśmy o detale: świeże ręczniki, miękkie koce i powitalna kawa. Idealny na romantyczny weekend czy bazę do górskich przygód.
+## Wejście pełne wrażeń
+
+Już od pierwszych chwil czuć tu wyjątkowy klimat. Jasne wnętrza przełamane akcentami drewna i marmuru sprawiają, że od progu masz ochotę rozgościć się na dłużej.
+
+## Noc w eleganckiej sypialni
+- Główna sypialnia oferuje duże łóżko małżeńskie – idealne dla par, które chcą odpocząć w komfortowych warunkach.
+- Druga sypialnia została przygotowana z myślą o rodzinach lub grupie przyjaciół – znajdują się tam dwa pojedyncze łóżka, gwarantujące prywatność i spokojny sen.
+
+Naturalne tkaniny i stonowane kolory podkreślają elegancki charakter wnętrza.
+
+## Wspólne chwile w sercu apartamentu
+
+Centralnym punktem STYLOWEGO jest aneks kuchenny z jadalnią.
+Nowoczesne sprzęty, marmurowe wykończenia i ciepłe, drewniane akcenty tworzą przestrzeń sprzyjającą spotkaniom.
+
+To idealne miejsce, by wspólnie przygotować posiłki, napić się kawy o poranku czy zakończyć dzień kolacją przy dużym stole.
+
+## Relaks w nowoczesnej łazience
+
+Po dniu pełnym górskich przygód można zanurzyć się w wygodzie łazienki z prysznicem.
+- jasne wnętrze daje poczucie świeżości,
+- duże lustro i elegancka umywalka podkreślają design,
+- miękkie ręczniki i detale dodają przytulności.
+
+## Detale, które tworzą atmosferę
+W STYLOWYM zadbaliśmy o każdy szczegół:
+- świeże ręczniki i pachnąca pościel,
+- miękkie koce na chłodne wieczory,
+- powitalna kawa, aby poczuć się jak w domu.
+
+To właśnie te drobiazgi sprawiają, że pobyt staje się wyjątkowym doświadczeniem.
+
+## Idealny wybór dla…
+- par szukających romantycznego apartamentu,
+- rodzin ceniących wygodę i przestrzeń,
+- osób, które chcą połączyć nowoczesny design z górskim klimatem.
+
+---
+
+Elegancja, komfort i domowa atmosfera – to wszystko znajdziesz w Apartamencie STYLOWY w Osadzie REST.
+To doskonałe miejsce na weekendowy wypad, dłuższy urlop czy bazę do odkrywania górskich atrakcji.

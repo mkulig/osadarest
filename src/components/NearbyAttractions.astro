@@ -1,15 +1,15 @@
 ---
-import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
 import masterSkiImage from "@assets/master-ski.jpg";
 import wiejskaChataImage from "@assets/wiejska-chata.jpg";
 ---
 
 <section class="py-12">
   <div class="max-w-5xl mx-auto px-6 text-center">
-    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-6">
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-6 fade-up">
         Okolice i atrakcje
     </h2>
-    <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 leading-relaxed mb-10">
+    <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 leading-relaxed mb-10 fade-up">
       Wybierając pobyt w <strong>Osada REST</strong>, zyskujesz wyjątkową bliskość
       najlepszych atrakcji regionu. To idealne miejsce zarówno dla miłośników sportów zimowych,
       jak i osób ceniących regionalną kuchnię. A to tylko <strong>jedne z wielu atrakcji</strong>,
@@ -17,14 +17,14 @@ import wiejskaChataImage from "@assets/wiejska-chata.jpg";
     </p>
 
     <div class="grid md:grid-cols-2 gap-8">
-      <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg dark:shadow-white/20 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition overflow-hidden">
-          <Image src={masterSkiImage} alt="Stacja Narciarska MASTER-SKI"
-             class="w-full h-56 object-cover"/>
+      <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg dark:shadow-white/20 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition overflow-hidden fade-up">
+          <Picture src={masterSkiImage} alt="Stacja Narciarska MASTER-SKI"
+             class="w-full h-56 object-cover" quality={50} formats={["avif","webp"]} fallbackFormat="webp"/>
         <div class="p-8">
           <h3 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
             ⛷ Stacja Narciarska MASTER-SKI
           </h3>
-          <p class="text-gray-600 text-lg mb-6 text-gray-600 dark:text-gray-400">
+          <p class="text-lg mb-6 text-gray-600 dark:text-gray-400">
             Zaledwie <span class="font-bold">600 metrów</span> od naszej osady
             znajduje się <strong>Stacja Narciarska MASTER-SKI</strong> – doskonałe miejsce
             do szusowania, nauki jazdy na nartach i rodzinnej zabawy na stoku.
@@ -32,14 +32,15 @@ import wiejskaChataImage from "@assets/wiejska-chata.jpg";
         </div>
       </div>
 
-      <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg dark:shadow-white/20 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition overflow-hidden">
-        <Image src={wiejskaChataImage} alt="Restauracja Wiejska Chata"
-             class="w-full h-56 object-cover"/>
+      <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg dark:shadow-white/20 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition overflow-hidden fade-up">
+        <Picture src={wiejskaChataImage} alt="Restauracja Wiejska Chata"
+             class="w-full h-56 object-cover" quality={50} formats={["avif","webp"]}
+             fallbackFormat="webp"/>
         <div class="p-8">
             <h3 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
             🍴 Restauracja Wiejska Chata
           </h3>
-          <p class="text-gray-600 text-lg mb-6 text-gray-600 dark:text-gray-400">
+          <p class="text-lg mb-6 text-gray-600 dark:text-gray-400">
             Zaledwie <span class="font-bold">100 metrów</span> od Osady REST
             znajduje się <strong>Restauracja Wiejska Chata</strong>, gdzie spróbujesz
             tradycyjnych dań regionalnych i poczujesz klimat lokalnej gościnności.
@@ -49,11 +50,11 @@ import wiejskaChataImage from "@assets/wiejska-chata.jpg";
     </div>
 
     <div class="mt-10 text-center">
-      <p class="text-sm md:text-base text-gray-600 dark:text-gray-400">
+      <p class="text-sm md:text-base text-gray-600 dark:text-gray-400 fade-up">
         Szukasz atrakcji tuż obok? Zobacz rekomendacje:
-        <a href="/blog/okolica-i-atrakcje" class="font-semibold underline underline-offset-4 hover:no-underline">okolica i atrakcje</a>
+        <a href="/blog/okolica-i-atrakcje" class="font-semibold underline underline-offset-4 hover:no-underline" data-astro-prefetch>okolica i atrakcje</a>
         oraz
-        <a href="/blog/gdzie-dobrze-zjesc" class="font-semibold underline underline-offset-4 hover:no-underline">gdzie dobrze zjeść</a>.
+        <a href="/blog/gdzie-dobrze-zjesc" class="font-semibold underline underline-offset-4 hover:no-underline" data-astro-prefetch>gdzie dobrze zjeść</a>.
       </p>
     </div>
   </div>

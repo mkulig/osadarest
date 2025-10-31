@@ -9,8 +9,8 @@ const all = await getCollection("apartments");
 const items = all.sort((a, b) => a.data.order - b.data.order).map(toCardProps);
 ---
 <Layout
-	title="Wszystkie apartamenty"
-	description="Wybierz najlepszą opcję dla siebie"
+	title="Nasze apartamenty"
+	description="Poznaj nasze apartamenty w Osada REST w Tyliczu. Komfortowe wnętrza, piękne widoki i doskonała lokalizacja blisko stoku i atrakcji."
 >
     <MainHeader>
         <span slot="title">Wybierz swój apartament </span>

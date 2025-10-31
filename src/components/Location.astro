@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
 import MapImage from "@assets/mapa_google.png";
 import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_DISPLAY } from "../consts";
 ---
@@ -7,21 +7,21 @@ import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_DISPLAY } from "../consts";
 <section id="lokalizacja">
     <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-20 lg:px-8">
         <div class="max-w-2xl lg:max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl font-extrabold text-gray-900 dark:text-gray-100">Lokalizacja</h2>
-            <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">Osada znajduje się w malowniczej okolicy, otoczonej górami i przyrodą. To idealne miejsce na wypoczynek w sercu Tylicza, blisko Krynicy-Zdroju.</p>
+            <h2 class="text-3xl font-extrabold text-gray-900 dark:text-gray-100 fade-up">Lokalizacja</h2>
+            <p class="mt-4 text-lg text-gray-600 dark:text-gray-400 fade-up">Osada znajduje się w malowniczej okolicy, otoczonej górami i przyrodą. To idealne miejsce na wypoczynek w sercu Tylicza, blisko Krynicy-Zdroju.</p>
         </div>
-        <div class="mt-16 lg:mt-20">
+        <div class="mt-16 lg:mt-20 fade-up">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="relative">
-                    <a class="block" href="https://maps.google.com/maps/dir//OSADA+REST+TYLICZ+Osada+3+33-383+Tylicz/@49.3969618,21.0283648,16z/data=!4m5!4m4!1m0!1m2!1m1!1s0x473e77b85e0045a9:0xb192ca3e8b653f86" target="_blank" title="Otwórz wskazówki dojazdu do Osada REST">
-                        <Image src={MapImage} alt="Lokalizacja Osada REST" class="rounded-2xl shadow-lg dark:shadow-white/20 w-full md:h-full dark:brightness-80" loading="lazy"/>
+                    <a class="block" href="https://maps.google.com/maps/dir//OSADA+REST+TYLICZ+Osada+3+33-383+Tylicz/@49.3969618,21.0283648,16z/data=!4m5!4m4!1m0!1m2!1m1!1s0x473e77b85e0045a9:0xb192ca3e8b653f86" target="_blank" title="Otwórz wskazówki dojazdu do Osada REST" data-astro-prefetch>
+                        <Picture src={MapImage} alt="Lokalizacja Osada REST" class="rounded-2xl shadow-lg dark:shadow-white/20 w-full md:h-full dark:brightness-80" loading="lazy" quality={80} formats={["avif","webp"]} fallbackFormat="webp"/>
                         <div class="absolute top-0 start-0 bg-white dark:bg-gray-900 m-3 shadow-sm dark:shadow-white/20 w-50 md:w-70 rounded-xs">
                             <div class="text-black dark:text-white">
                                 <div class="py-2 px-3">
                                     <div class="text-sm" style="font-weight: 700;">OSADA REST TYLICZ</div>
                                     <div class="hidden md:block mt-1" style="font-size: 12px;">Osada 3, 33-383 Tylicz</div>
 
-                                    <a class="text-sm text-blue-500 hover:underline block mt-2" title="Wyświetl większą mapę" target="_blank" href="https://maps.google.com/maps?ll=49.396962,21.028365&amp;z=16&amp;t=m&amp;hl=pl&amp;gl=PL&amp;mapclient=embed&amp;cid=12795511861288451974" referrerpolicy="no-referrer">Wyświetl większą mapę</a>
+                                    <a class="text-sm text-blue-500 hover:underline block mt-2" title="Wyświetl większą mapę" target="_blank" href="https://maps.google.com/maps?ll=49.396962,21.028365&amp;z=16&amp;t=m&amp;hl=pl&amp;gl=PL&amp;mapclient=embed&amp;cid=12795511861288451974" referrerpolicy="no-referrer" data-astro-prefetch>Wyświetl większą mapę</a>
                                 </div>
                             </div>
                         </a>

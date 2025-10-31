@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
 import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
 import MainHeader from "../../components/MainHeader.astro";
@@ -11,7 +11,7 @@ const posts = (await getCollection("blog")).sort(
 );
 ---
 
-<Layout title="Blog" description={SITE_DESCRIPTION}>
+<Layout title="Informacje i inspiracje dla gości" description="Osada REST Blog – znajdziesz tu porady, inspiracje i wiadomości dla turystów. Tylicz i okolice oczami gospodarzy.">
     <MainHeader>
         <span slot="title">Blog</span>
         <span slot="description">Dzielimy się aktualnościami, wskazówkami dla turystów itd.
@@ -22,9 +22,10 @@ const posts = (await getCollection("blog")).sort(
 			{
 				posts.map((post) => (
 					<div class="hover:brightness-105">
-						<a href={`/blog/${post.id}`}>
+						<a href={`/blog/${post.id}`} data-astro-prefetch>
 						{post.data.heroImage && (
-							<Image width={720} height={360} src={post.data.heroImage} alt=""  class="w-full rounded-xl dark:shadow-white/20 shadow-lg "/>
+							<Picture src={post.data.heroImage} alt={post.data.title}  class="w-full rounded-xl dark:shadow-white/20 shadow-lg" quality={50} formats={["avif","webp"]}
+            fallbackFormat="webp"/>
 						)}
 
 							<p class="text-gray-400 dark:text-gray-600 text-end py-2">
