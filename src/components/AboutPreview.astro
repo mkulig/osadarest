@@ -30,13 +30,19 @@ const items = featured.map(toCardProps);
   itemscope
   itemtype="https://schema.org/LodgingBusiness"
 >
-  {/* nazwa dla schema.org, bez dublowania H1 */}
   <span class="sr-only" itemprop="name">{SITE_TITLE}</span>
+
+  <div class="sr-only" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+     <span itemprop="streetAddress">Osada 3</span>
+     <span itemprop="addressLocality">Tylicz</span>,
+     <span itemprop="postalCode">33-383</span>,
+     <span itemprop="addressCountry">PL</span>
+   </div>
 
   <div class="mx-auto grid container grid-cols-1 items-center gap-6 px-4 sm:gap-8 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-8">
       <div class="flex items-center gap-2 h-[400px] w-full mt-10 mx-auto">
           {items.map((item) => (
-              <div class="relative group flex-grow transition-all w-56 rounded-lg overflow-hidden h-[400px] duration-500 hover:w-full fade-up">
+              <div class="relative group grow transition-all w-56 rounded-lg overflow-hidden h-[400px] duration-500 hover:w-full fade-up">
                   <Picture class="h-full w-full object-cover object-center"
                       src={item.cover}
                       alt={item.coverAlt}

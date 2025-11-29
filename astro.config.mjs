@@ -5,7 +5,7 @@ import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
 import compressor from "astro-compressor";
-import criticalCss from "astro-critical-css";
+// import criticalCss from "astro-critical-css";
 import robotsTxt from "astro-robots-txt";
 
 // https://astro.build/config
@@ -17,7 +17,7 @@ export default defineConfig({
 		robotsTxt({
 			host: "osadarest.pl",
 		}),
-		criticalCss(),
+		// criticalCss(),
 		compressor({ zstd: false, brotli: true, gzip: true }),
 	],
 	trailingSlash: "never",
@@ -25,8 +25,10 @@ export default defineConfig({
 	image: {
 		// responsiveStyles: true,
 		layout: "constrained",
-		// Ogranicz rozmiary
-		breakpoints: [640, 960, 1280, 1920],
+		breakpoints: [380, 640, 960, 1280],
+	},
+	build: {
+		inlineStylesheets: "always",
 	},
 	vite: {
 		plugins: [tailwindcss()],
