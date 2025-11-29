@@ -1,7 +1,7 @@
 {
 	"name": "osadarest",
 	"type": "module",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"scripts": {
 		"dev": "astro dev",
 		"build": "astro build",
@@ -21,6 +21,7 @@
 		"astro-breadcrumbs": "^3.3.1",
 		"astro-capo": "^0.0.1",
 		"astro-compressor": "^1.2.0",
+		"astro-critical-css": "^0.0.7",
 		"astro-robots-txt": "^1.0.0",
 		"astro-seo-schema": "^5.1.0",
 		"schema-dts": "^1.1.5",
