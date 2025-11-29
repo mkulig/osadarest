@@ -25,6 +25,8 @@ export default defineConfig({
 	image: {
 		// responsiveStyles: true,
 		layout: "constrained",
+		// Ogranicz rozmiary
+		breakpoints: [640, 960, 1280, 1920],
 	},
 	vite: {
 		plugins: [tailwindcss()],
