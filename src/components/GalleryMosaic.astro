@@ -22,13 +22,11 @@ const isLarge = (i: number) => {
       {gallery.map((img: any, i: number) => (
         <figure
           class={[
-            // kolumny: large ma rozlać się na 2 kolumny od md wzwyż
             isLarge(i) ? "md:col-span-2 row-span-2" : "md:col-span-1",
-            // wysokości/proporcje: small jest bardziej „pionowy”, large bardziej „szeroki”
             "relative overflow-hidden rounded-lg 2xl:rounded-2xl hover:scale-102 transition duration-300 ease-in-out fade-up",
             isLarge(i)
-              ? "aspect-16/10 md:aspect-video"   // „duży”
-              : "aspect-4/3 md:aspect-5/4"      // „mały”
+              ? "aspect-16/10 md:aspect-video"
+              : "aspect-4/3 md:aspect-5/4"
           ].join(" ")}
         >
           <Picture
@@ -38,6 +36,7 @@ const isLarge = (i: number) => {
             fallbackFormat="webp"
             loading="lazy"
             class="absolute inset-0 h-full w-full object-cover object-center"
+            sizes={isLarge(i) ? "(min-width: 64rem) 50vw, 100vw" : "(min-width: 64rem) 25vw, 100vw"}
           />
         </figure>
       ))}

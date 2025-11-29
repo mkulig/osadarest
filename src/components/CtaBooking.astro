@@ -21,7 +21,15 @@ import { CONTACT_EMAIL, CONTACT_PHONE } from "../consts";
         </div>
       </div>
       <div class="relative mt-16 h-80 lg:mt-8 lg:h-auto">
-        <Picture class="absolute left-0 top-0 w-160 max-w-none rounded-2xl bg-white/5 ring-1 ring-white/10 lg:top-14" src={yardImage} alt="dashboard screenshot" quality={50} formats={["avif","webp"]} fallbackFormat="webp" />
+        <Picture
+        class="absolute left-0 top-0 w-160 max-w-none rounded-2xl bg-white/5 ring-1 ring-white/10 lg:top-14"
+        src={yardImage}
+        alt="Widok na ogród z altaną"
+        quality={50}
+        formats={["avif","webp"]}
+        fallbackFormat="webp"
+        sizes="(min-width: 64rem) 50vw, 100vw"
+        />
       </div>
     </div>
   </div>

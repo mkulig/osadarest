@@ -14,7 +14,16 @@ import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_DISPLAY } from "../consts";
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="relative">
                     <a class="block" href="https://maps.google.com/maps/dir//OSADA+REST+TYLICZ+Osada+3+33-383+Tylicz/@49.3969618,21.0283648,16z/data=!4m5!4m4!1m0!1m2!1m1!1s0x473e77b85e0045a9:0xb192ca3e8b653f86" target="_blank" title="Otwórz wskazówki dojazdu do Osada REST">
-                        <Picture src={MapImage} alt="Lokalizacja Osada REST" class="rounded-2xl shadow-lg dark:shadow-white/20 w-full md:h-full dark:brightness-80" loading="lazy" quality={80} formats={["avif","webp"]} fallbackFormat="webp"/>
+                        <Picture
+                        src={MapImage}
+                        alt="Lokalizacja Osada REST"
+                        class="rounded-2xl shadow-lg dark:shadow-white/20 w-full md:h-full dark:brightness-80"
+                        loading="lazy"
+                        quality={50}
+                        formats={["avif","webp"]}
+                        fallbackFormat="webp"
+                        sizes="(min-width: 64rem) 50vw, 100vw"
+                        />
                     </a>
                     <div class="absolute top-0 start-0 bg-white dark:bg-gray-900 m-3 shadow-sm dark:shadow-white/20 w-50 md:w-70 rounded-xs">
                         <div class="text-black dark:text-white">

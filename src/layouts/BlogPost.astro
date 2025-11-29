@@ -10,9 +10,16 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
 <Layout title={title} description={description}>
-	<article class="mx-auto md:w-1/2">
+	<article class="mx-auto md:w-2/3">
 		<div>
-			{heroImage && <Picture src={heroImage} alt={title} class="rounded-xl shadow-lg dark:shadow-white/20 w-full" formats={["avif","webp"]} fallbackFormat="webp"/>}
+			{heroImage && <Picture
+			src={heroImage}
+			alt={title}
+			class="rounded-xl shadow-lg dark:shadow-white/20 w-full max-h-100 object-cover"
+			formats={["avif","webp"]}
+		    fallbackFormat="webp"
+			sizes="(min-width: 64rem) 60vw, 100vw"
+			/>}
 		</div>
 		<div class="text-gray-600 dark:text-gray-400 text-end my-1">
 			Opublikowano <FormattedDate date={pubDate} />
@@ -25,7 +32,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		<h1 class="text-5xl mt-2 text-dark dark:text-white">{title}</h1>
 
 		<hr class="my-8 text-gray-300 dark:text-gray-700"/>
-		<div class="prose dark:prose-invert max-w-full">
+		<div class="prose dark:prose-invert md:prose-xl mx-auto prose-p:text-justify">
 			<slot />
 		</div>
 	</article>
