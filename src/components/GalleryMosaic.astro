@@ -19,7 +19,7 @@ const isLarge = (i: number) => {
     <div
       class="grid md:grid-cols-4 gap-4"
     >
-      {gallery.map((img, i) => (
+      {gallery.map((img: any, i: number) => (
         <figure
           class={[
             // kolumny: large ma rozlać się na 2 kolumny od md wzwyż
@@ -27,8 +27,8 @@ const isLarge = (i: number) => {
             // wysokości/proporcje: small jest bardziej „pionowy”, large bardziej „szeroki”
             "relative overflow-hidden rounded-lg 2xl:rounded-2xl hover:scale-102 transition duration-300 ease-in-out fade-up",
             isLarge(i)
-              ? "aspect-[16/10] md:aspect-[16/9]"   // „duży”
-              : "aspect-[4/3] md:aspect-[5/4]"      // „mały”
+              ? "aspect-16/10 md:aspect-video"   // „duży”
+              : "aspect-4/3 md:aspect-5/4"      // „mały”
           ].join(" ")}
         >
           <Picture

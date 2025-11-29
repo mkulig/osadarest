@@ -22,7 +22,7 @@ const posts = (await getCollection("blog")).sort(
 			{
 				posts.map((post) => (
 					<div class="hover:brightness-105">
-						<a href={`/blog/${post.id}`} data-astro-prefetch>
+						<a href={`/blog/${post.id}`}>
 						{post.data.heroImage && (
 							<Picture src={post.data.heroImage} alt={post.data.title}  class="w-full rounded-xl dark:shadow-white/20 shadow-lg" quality={50} formats={["avif","webp"]}
             fallbackFormat="webp"/>

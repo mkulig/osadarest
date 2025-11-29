@@ -21,7 +21,10 @@ export default defineConfig({
 		compressor({ zstd: false, brotli: true, gzip: true }),
 	],
 	trailingSlash: "never",
-	prefetch: true,
+	prefetch: {
+		defaultStrategy: "hover",
+		prefetchAll: true,
+	},
 	image: {
 		// responsiveStyles: true,
 		layout: "constrained",
@@ -31,7 +34,7 @@ export default defineConfig({
 		inlineStylesheets: "always",
 	},
 	vite: {
-		plugins: [tailwindcss()],
+		plugins: [tailwindcss({ optimize: true })],
 		build: {
 			rollupOptions: {
 				output: {

@@ -60,14 +60,14 @@ const { Content } = await render(room);
            <Content />
 		</div>
 
-<div class={`max-w-5xl py-16 my-10 md:px-10 max-md:text-center md:mx-auto flex flex-col md:flex-row items-center justify-between bg-gradient-to-b ${room.data.color.gradient} rounded-2xl text-white fade-up`}>
+<div class={`max-w-5xl py-16 my-10 md:px-10 max-md:text-center md:mx-auto flex flex-col md:flex-row items-center justify-between bg-linear-to-b ${room.data.color.gradient} rounded-2xl text-white fade-up`}>
     <div>
         <h3
-            class="text-4xl md:text-[46px] md:leading-[60px] font-semibold bg-gradient-to-r from-white to-white/90 text-transparent bg-clip-text test-shadow-xs">
+            class="text-4xl md:text-[46px] md:leading-[60px] font-semibold bg-linear-to-r from-white to-white/90 text-transparent bg-clip-text test-shadow-xs">
                 Gotowy na odpoczynek?
         </h3>
-        <p class="bg-gradient-to-r from-white to-white/80 text-transparent bg-clip-text text-lg test-shadow-xs">
-            Twój czas na relaks w <span class="border-b-1 border-solid border-white/20">apartamencie {room.data.title.toLocaleLowerCase()}</span> zaczyna się właśnie tutaj.
+        <p class="bg-linear-to-r from-white to-white/80 text-transparent bg-clip-text text-lg test-shadow-xs">
+            Twój czas na relaks w <span class="border-b border-solid border-white/20">apartamencie {room.data.title.toLocaleLowerCase()}</span> zaczyna się właśnie tutaj.
         </p>
     </div>
     <a href={`tel:${CONTACT_PHONE}`} class={`px-12 py-3 ${room.data.color.text} bg-white rounded-full text-lg mt-4 font-bold text-shadow-2xs hover:scale-102`}>

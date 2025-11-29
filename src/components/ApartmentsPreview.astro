@@ -20,7 +20,7 @@ export type ApartmentItem = {
 	areaM2: number;
 	beds: string;
 
-	priceFrom: number;
+	priceFrom?: number;
 	currency: string;
 	amenities: Amenity[];
 
@@ -38,8 +38,8 @@ export type ApartmentItem = {
 };
 
 interface Props {
-	title: string;
-	subtitle: string;
+	title?: string;
+	subtitle?: string;
 	items: ApartmentItem[];
 }
 
@@ -64,7 +64,7 @@ const { title, subtitle, items } = Astro.props;
 
         return (
           <article class="group flex flex-col overflow-hidden rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-900 shadow-sm transition hover:shadow-md fade-up">
-            <a href={url} class="relative block aspect-[4/3] w-full overflow-hidden" data-astro-prefetch>
+            <a href={url} class="relative block aspect-4/3 w-full overflow-hidden">
                 <Picture
                     src={it.cover}
                     alt={it.coverAlt}
@@ -84,7 +84,7 @@ const { title, subtitle, items } = Astro.props;
             <div class="flex flex-1 flex-col p-4">
               <header>
                 <h3 class="text-2xl font-semibold">
-                  <a href={url} class={`hover:underline underline-offset-2 ${it.color.text}`} data-astro-prefetch>{it.title}</a>
+                  <a href={url} class={`hover:underline underline-offset-2 ${it.color.text}`}>{it.title}</a>
                 </h3>
                 <p class="text-gray-500 text-sm pb-2">{it.description}</p>
 

@@ -19,9 +19,9 @@ const apartments = defineCollection({
 	// type: "content",
 	schema: ({ image }) =>
 		z.object({
-			title: z.string(), // nazwa apartamentu
-			description: z.string().max(220), // teaser do kafelka
-			slug: z.string().regex(/^[a-z0-9-]+$/), // kontrola slugów
+			title: z.string(),
+			description: z.string().max(220),
+			slug: z.string().regex(/^[a-z0-9-]+$/),
 			featured: z.boolean().default(false),
 			order: z.number().default(0),
 			color: z.object({
@@ -30,9 +30,9 @@ const apartments = defineCollection({
 				gradient: z.string(),
 			}),
 
-			capacity: z.number().int().positive(), // osoby
+			capacity: z.number().int().positive(),
 			areaM2: z.number().positive(),
-			beds: z.string().optional(), // opis łóżek
+			beds: z.string(),
 
 			priceFrom: z.number().optional(),
 			currency: z.string().default("PLN"),
@@ -52,7 +52,7 @@ const apartments = defineCollection({
 				.array(
 					z.object({
 						src: z.preprocess((val) => `@assets/${val}`, image()),
-						alt: z.string().optional(),
+						alt: z.string(),
 					}),
 				)
 				.default([]),
