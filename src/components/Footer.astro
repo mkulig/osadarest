@@ -34,40 +34,51 @@ const menu = [
     </div>
 </footer>
 <script is:inline>
-(function(){
-  const prefetched = new Set();
-  const links = new WeakSet();
-
-  function prefetch(url) {
-    url = url.replace(/#.*/, '');
-    if (prefetched.has(url)) return;
-    try {
-      const u = new URL(url, location.href);
-      if (location.origin !== u.origin) return;
-      if (location.pathname === u.pathname && location.search === u.search) return;
-    } catch { return; }
-
-    prefetched.add(url);
-    const link = document.createElement('link');
-    link.rel = 'prefetch';
-    link.href = url;
-    document.head.append(link);
-  }
-
-  function init() {
+(function() {
+    const prefetched = new Set();
+    const processed = new WeakSet();
     let timeout;
-    for (const a of document.getElementsByTagName('a')) {
-      if (links.has(a)) continue;
-      links.add(a);
-      a.addEventListener('mouseenter', () => {
-        timeout = setTimeout(() => prefetch(a.href), 80);
-      }, { passive: true });
-      a.addEventListener('mouseleave', () => {
-        clearTimeout(timeout);
-      }, { passive: true });
-    }
-  }
 
-  init();
+    function isSlowConnection() {
+        if ("connection" in navigator) {
+            const c = navigator.connection;
+            return c.saveData || /2g/.test(c.effectiveType);
+        }
+        return false;
+    }
+
+    function prefetch(url) {
+        url = url.replace(/#.*/, "");
+        if (!navigator.onLine || isSlowConnection() || prefetched.has(url)) return;
+        try {
+            const u = new URL(url, location.href);
+            if (location.origin !== u.origin) return;
+            if (location.pathname === u.pathname && location.search === u.search) return;
+        } catch { return; }
+
+        prefetched.add(url);
+        const link = document.createElement("link");
+        link.rel = "prefetch";
+        link.href = url;
+        document.head.append(link);
+    }
+
+    function init() {
+        for (const a of document.getElementsByTagName("a")) {
+            if (processed.has(a) || a.tagName !== "A") continue;
+            if (a.dataset.astroPrefetch === "false") continue;
+
+            processed.add(a);
+            a.addEventListener("mouseenter", () => {
+                timeout = setTimeout(() => prefetch(a.href), 80);
+            }, { passive: true });
+            a.addEventListener("mouseleave", () => {
+                clearTimeout(timeout);
+            }, { passive: true });
+        }
+    }
+
+    init();
+    document.addEventListener("astro:page-load", init);
 })();
 </script>
