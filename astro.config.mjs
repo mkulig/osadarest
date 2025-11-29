@@ -21,10 +21,7 @@ export default defineConfig({
 		compressor({ zstd: false, brotli: true, gzip: true }),
 	],
 	trailingSlash: "never",
-	prefetch: {
-		defaultStrategy: "hover",
-		prefetchAll: true,
-	},
+	prefetch: false, // own logic for prefetch
 	image: {
 		// responsiveStyles: true,
 		layout: "constrained",

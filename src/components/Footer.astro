@@ -33,3 +33,41 @@ const menu = [
         <span class="block text-sm text-gray-500 text-center dark:text-gray-400">&copy; {today} {SITE_TITLE}. Wszelkie prawa zastrzeżone.</span>
     </div>
 </footer>
+<script is:inline>
+(function(){
+  const prefetched = new Set();
+  const links = new WeakSet();
+
+  function prefetch(url) {
+    url = url.replace(/#.*/, '');
+    if (prefetched.has(url)) return;
+    try {
+      const u = new URL(url, location.href);
+      if (location.origin !== u.origin) return;
+      if (location.pathname === u.pathname && location.search === u.search) return;
+    } catch { return; }
+
+    prefetched.add(url);
+    const link = document.createElement('link');
+    link.rel = 'prefetch';
+    link.href = url;
+    document.head.append(link);
+  }
+
+  function init() {
+    let timeout;
+    for (const a of document.getElementsByTagName('a')) {
+      if (links.has(a)) continue;
+      links.add(a);
+      a.addEventListener('mouseenter', () => {
+        timeout = setTimeout(() => prefetch(a.href), 80);
+      }, { passive: true });
+      a.addEventListener('mouseleave', () => {
+        clearTimeout(timeout);
+      }, { passive: true });
+    }
+  }
+
+  init();
+})();
+</script>
