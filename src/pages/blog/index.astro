@@ -28,6 +28,8 @@ const posts = (await getCollection("blog")).sort(
                             class="w-full rounded-xl shadow-lg dark:shadow-white/20"
                             quality={50}
                             formats={["avif","webp"]}
+                            fallbackFormat="webp"
+                            sizes="(min-width: 64rem) 33vw, 100vw"
                         />
                     )}
                     <p class="text-gray-400 dark:text-gray-600 text-end py-2">

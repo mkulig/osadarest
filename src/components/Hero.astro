@@ -34,6 +34,7 @@ import { Head } from "astro-capo";
                 class="w-full rounded-xl shadow-lg dark:shadow-white/20 object-cover"
                 quality={50}
                 formats={["avif","webp"]}
+                fallbackFormat="webp"
                 fetchpriority="high"
                 loading="eager"
                 sizes="(min-width: 64rem) 50vw, 100vw"

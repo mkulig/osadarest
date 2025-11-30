@@ -19,6 +19,7 @@ const { gallery = [] } = Astro.props;
                             src={img.src}
                             alt={img.alt || "Galeria"}
                             formats={["avif","webp"]}
+                            fallbackFormat="webp"
                             loading="lazy"
                             class="absolute inset-0 h-full w-full object-cover"
                             sizes={isLarge ? "(min-width: 64rem) 50vw, 100vw" : "(min-width: 64rem) 25vw, 100vw"}
