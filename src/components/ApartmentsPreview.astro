@@ -84,9 +84,9 @@ const { title, subtitle, items } = Astro.props;
                         <p class="text-gray-500 text-sm pb-2">{it.description}</p>
 
                         <dl class="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-gray-700 dark:text-gray-300">
-                            {typeof it.capacity === "number" && <dd title="Liczba gości">👥 {it.capacity} os.</dd>}
-                            {it.beds && <dd title="Typy łóżek">🛏️ {it.beds}</dd>}
-                            {typeof it.areaM2 === "number" && <dd title="Metraż">📐 {it.areaM2} m²</dd>}
+                            {typeof it.capacity === "number" && <dt title="Liczba gości">👥 {it.capacity} os.</dt>}
+                            {it.beds && <dt title="Typy łóżek">🛏️ {it.beds}</dt>}
+                            {typeof it.areaM2 === "number" && <dt title="Metraż">📐 {it.areaM2} m²</dt>}
                         </dl>
 
                         <hr class="my-2 text-gray-200 dark:text-gray-700"/>
