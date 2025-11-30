@@ -48,33 +48,23 @@ const items = [
 ];
 ---
 
-<section class="text-gray-600 dark:text-gray-300 py-12 lg:py-20" id="opinie" >
-    <div class="container mx-auto px-6 md:px-12 xl:px-6">
+<section class="text-gray-600 dark:text-gray-300 py-12 lg:py-20 container mx-auto px-6 md:px-12 xl:px-6" id="opinie">
+    <header class="mb-10 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 fade-up">Opinie o nas</h2>
+        <p class="text-sm md:text-base text-gray-600 dark:text-gray-400 mt-4 fade-up">
+            Dołącz do setek zadowolonych Gości, którzy wybrali nasze <strong>apartamenty w górach</strong> i docenili komfort, lokalizację oraz gościnność.
+        </p>
+    </header>
 
-        <div class="mb-10 space-y-4 px-6 md:px-0 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 fade-up">
-                Opinie o nas
-            </h2>
-            <p class="text-sm md:text-base text-gray-600  dark:text-gray-400 mt-4 fade-up">
-                Dołącz do setek zadowolonych Gości, którzy wybrali nasze
-                      <strong>apartamenty w górach</strong> i docenili komfort, lokalizację oraz gościnność.
-            </p>
-        </div>
-
-
-        <div class="md:columns-2 lg:columns-3 gap-6 space-y-6 animate-none md:fade-up">
-            {items.map((review) => (
-                <div
-                    class="aspect-auto p-6 border border-gray-100 rounded-3xl bg-white dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none fade-up md:animate-none">
-                    <div class="flex gap-4">
-                        <div>
-                            <h3 class="text-lg font-medium text-gray-700 dark:text-white i">{review.name}</h3>
-                            <p class="text-xs text-gray-500 dark:text-gray-300">Opinia {review.source}</p>
-                        </div>
-                    </div>
-                    <p class="mt-6 italic">„{review.text}”</p>
-                </div>
-            ))}
-        </div>
+    <div class="md:columns-2 lg:columns-3 gap-6 space-y-6 md:fade-up">
+        {items.map((review) => (
+            <figure class="p-6 border border-gray-100 rounded-3xl bg-white dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none fade-up md:animate-none">
+                <blockquote class="italic">„{review.text}"</blockquote>
+                <figcaption class="mt-6">
+                    <strong class="text-lg font-medium text-gray-700 dark:text-white">{review.name}</strong>
+                    <p class="text-xs text-gray-500 dark:text-gray-300">Opinia {review.source}</p>
+                </figcaption>
+            </figure>
+        ))}
     </div>
 </section>

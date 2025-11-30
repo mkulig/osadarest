@@ -1,7 +1,7 @@
 ---
 import { Picture } from "astro:assets";
 import { getCollection } from "astro:content";
-import { SITE_TITLE } from "../consts";
+import { CONTACT_EMAIL, CONTACT_PHONE, SITE_TITLE } from "../consts";
 import { toCardProps } from "../lib/apartments";
 
 interface USP {
@@ -24,60 +24,54 @@ const items = featured.map(toCardProps);
 ---
 
 <section
-  id="about"
-  class="py-8 sm:py-10 lg:py-14"
-  aria-labelledby="about-heading"
-  itemscope
-  itemtype="https://schema.org/LodgingBusiness"
+    id="about"
+    class="py-8 sm:py-10 lg:py-14 mx-auto container px-4 sm:px-6 lg:px-8"
+    itemscope
+    itemtype="https://schema.org/LodgingBusiness"
 >
-  <span class="sr-only" itemprop="name">{SITE_TITLE}</span>
-
-  <div class="sr-only" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-     <span itemprop="streetAddress">Osada 3</span>
-     <span itemprop="addressLocality">Tylicz</span>,
-     <span itemprop="postalCode">33-383</span>,
-     <span itemprop="addressCountry">PL</span>
-   </div>
-
-  <div class="mx-auto grid container grid-cols-1 items-center gap-6 px-4 sm:gap-8 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-8">
-      <div class="flex items-center gap-2 h-[400px] w-full mt-10 mx-auto">
-          {items.map((item) => (
-              <div class="relative group grow transition-all w-56 rounded-lg overflow-hidden h-[400px] duration-500 hover:w-full fade-up">
-                  <Picture class="h-full w-full object-cover object-center"
-                      src={item.cover}
-                      alt={item.coverAlt}
-                      quality={50}
-                      formats={["avif","webp"]}
-                      fallbackFormat="webp"
-                      sizes="17vw"
-                      />
-              </div>
-          ))}
-
-      </div>
-
-    <div class="mx-auto w-full max-w-xl">
-      <h2 id="about-heading" class="text-2xl font-semibold tracking-tight sm:text-3xl text-gray-900 dark:text-gray-100 fade-up">
-          Wypocznij w naszych apartamentach
-      </h2>
-
-      <p class="mt-3 text-gray-600 dark:text-gray-400 fade-up" itemprop="description">
-          Komfortowe i w pełni wyposażone apartamenty położone w sercu natury.
-               To <strong>idealny nocleg w górach</strong> dla rodzin, par i grup przyjaciół,
-               którzy szukają spokoju, wygody i bliskości atrakcji Tylicza.
-      </p>
-
-      {usps?.length > 0 && (
-        <ul class="mt-5 grid list-none grid-cols-1 gap-3 p-0 sm:grid-cols-2 text-gray-600 dark:text-gray-400">
-          {usps.map((u) => (
-            <li class="flex items-start gap-2 fade-up">
-              {u.icon && <span class="text-lg leading-none" aria-hidden="true">{u.icon}</span>}
-              <span class="text-sm">{u.text}</span>
-            </li>
-          ))}
-        </ul>
-      )}
-
+    <meta itemprop="name" content={SITE_TITLE}/>
+    <div class="sr-only" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+        <meta itemprop="streetAddress" content="Osada 3"/>
+        <meta itemprop="addressLocality" content="Tylicz"/>
+        <meta itemprop="postalCode" content="33-383"/>
+        <meta itemprop="addressCountry" content="PL"/>
     </div>
-  </div>
+    <meta itemprop="telephone" content={CONTACT_PHONE}/>
+    <meta itemprop="email" content={CONTACT_EMAIL}/>
+
+    <div class="grid grid-cols-1 items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-12">
+        <div class="flex items-center gap-2 h-[400px] w-full mt-10">
+            {items.map((item) => (
+                <figure class="relative group grow transition-all w-56 rounded-lg overflow-hidden h-[400px] duration-500 hover:w-full fade-up">
+                    <Picture
+                        src={item.cover}
+                        alt={item.coverAlt}
+                        class="h-full w-full object-cover object-center"
+                        quality={50}
+                        formats={["avif","webp"]}
+                        sizes="17vw"
+                    />
+                </figure>
+            ))}
+        </div>
+
+        <article class="max-w-xl">
+            <h2 class="text-2xl font-semibold tracking-tight sm:text-3xl text-gray-900 dark:text-gray-100 fade-up">
+                Wypocznij w naszych apartamentach
+            </h2>
+            <p class="mt-3 text-gray-600 dark:text-gray-400 fade-up" itemprop="description">
+                Komfortowe i w pełni wyposażone apartamenty położone w sercu natury. To <strong>idealny nocleg w górach</strong> dla rodzin, par i grup przyjaciół, którzy szukają spokoju, wygody i bliskości atrakcji Tylicza.
+            </p>
+            {usps?.length > 0 && (
+                <ul class="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2 text-gray-600 dark:text-gray-400">
+                    {usps.map((u) => (
+                        <li class="flex items-start gap-2 fade-up">
+                            {u.icon && <span class="text-lg leading-none" aria-hidden="true">{u.icon}</span>}
+                            <span class="text-sm">{u.text}</span>
+                        </li>
+                    ))}
+                </ul>
+            )}
+        </article>
+    </div>
 </section>

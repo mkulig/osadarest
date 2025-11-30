@@ -26,62 +26,45 @@ const menu = [
 ---
 
 <header class="sticky top-0 z-20 bg-white/95 backdrop-blur supports-backdrop-filter:bg-white/70 dark:bg-gray-900 shadow-sm dark:shadow-white/20">
-  <nav class="container relative z-10 mx-auto flex w-full items-center justify-between px-4 py-2 text-gray-900 dark:text-white" aria-label="Główna nawigacja">
-    <a href="/">
-        <Image src={Logo} alt={SITE_TITLE} class="w-32 py-1 dark:hidden" loading="eager"/>
-        <strong class="hidden dark:inline">{SITE_TITLE}</strong>
-    </a>
+    <nav class="container mx-auto flex items-center justify-between px-4 py-2 text-gray-900 dark:text-white" aria-label="Główna nawigacja">
+        <a href="/">
+            <Image src={Logo} alt={SITE_TITLE} class="w-32 py-1 dark:hidden" loading="eager"/>
+            <strong class="hidden dark:inline">{SITE_TITLE}</strong>
+        </a>
 
-    <ul class="md:flex hidden items-center gap-8">
-        {menu.map((link) => (
-            <li>
-              <HeaderLink
-                class="hover:text-gray-500/80 dark:hover:text-gray-300 transition p-2"
-                href={link.href}
-              >
-                {link.title}
-              </HeaderLink>
-            </li>
-          ))}
-    </ul>
-
-    <a
-      href="/rezerwacja"
-      class="rounded-full px-4 py-1.5 hover:brightness-105 transition border-2 border-[#963f00]  text-[#963f00] shadow-lg transform duration-300 hover:scale-102"
-    >
-        <strong>Rezerwacja</strong>
-    </a>
-
-    <button aria-label="menu-btn" type="button" class="menu-btn inline-block md:hidden active:scale-90 transition">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" class="fill-current">
-            <path d="M 3 7 A 1.0001 1.0001 0 1 0 3 9 L 27 9 A 1.0001 1.0001 0 1 0 27 7 L 3 7 z M 3 14 A 1.0001 1.0001 0 1 0 3 16 L 27 16 A 1.0001 1.0001 0 1 0 27 14 L 3 14 z M 3 21 A 1.0001 1.0001 0 1 0 3 23 L 27 23 A 1.0001 1.0001 0 1 0 27 21 L 3 21 z"></path>
-        </svg>
-    </button>
-
-    <div class="mobile-menu absolute top-[68px] left-0 w-full bg-white  dark:bg-gray-900 p-6 hidden md:hidden">
-        <ul class="flex flex-col space-y-4 text-lg">
+        <ul class="hidden md:flex items-center gap-8">
             {menu.map((link) => (
                 <li>
-                  <HeaderLink
-                    class="p-2"
-                    href={link.href}
-                  >
-                    {link.title}
-                  </HeaderLink>
+                    <HeaderLink href={link.href} class="hover:text-gray-500/80 dark:hover:text-gray-300 transition p-2">{link.title}</HeaderLink>
                 </li>
-              ))}
+            ))}
         </ul>
-    </div>
-</nav>
+
+        <a href="/rezerwacja" class="rounded-full px-4 py-1.5 hover:brightness-105 transition border-2 border-[#963f00] text-[#963f00] shadow-lg hover:scale-102">
+            <strong>Rezerwacja</strong>
+        </a>
+
+        <button type="button" class="menu-btn md:hidden active:scale-90 transition" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mobile-menu">
+            <svg width="30" height="30" viewBox="0 0 30 30" class="fill-current" aria-hidden="true">
+                <path d="M3 7a1 1 0 110 2h24a1 1 0 110-2H3zm0 7a1 1 0 110 2h24a1 1 0 110-2H3zm0 7a1 1 0 110 2h24a1 1 0 110-2H3z"/>
+            </svg>
+        </button>
+
+        <ul id="mobile-menu" class="mobile-menu hidden absolute top-full left-0 w-full bg-white dark:bg-gray-900 p-6 flex-col space-y-4 text-lg md:hidden">
+            {menu.map((link) => (
+                <li>
+                    <HeaderLink href={link.href} class="p-2">{link.title}</HeaderLink>
+                </li>
+            ))}
+        </ul>
+    </nav>
 </header>
 
 <script>
-    const menuButtons = document.querySelectorAll('.menu-btn');
-    const mobileMenus = document.querySelectorAll('.mobile-menu');
-
-    menuButtons.forEach((btn, index) => {
-        btn.addEventListener('click', () => {
-            mobileMenus[index].classList.toggle('hidden');
-        });
+    document.querySelector('.menu-btn')?.addEventListener('click', (e) => {
+        const btn = e.currentTarget;
+        const menu = document.getElementById('mobile-menu');
+        const isOpen = menu?.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', !isOpen);
     });
 </script>

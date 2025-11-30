@@ -11,42 +11,34 @@ interface Props {
 	image?: ImageMetadata;
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-
 const { title, description, image = FallbackImage } = Astro.props;
-const titleWebsite = `${title} | ${SITE_TITLE}`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const fullTitle = `${title} | ${SITE_TITLE}`;
+const imageURL = new URL(image.src, Astro.url);
 ---
 
-<Font cssVariable='--font-satoshi' preload />
+<Font cssVariable="--font-satoshi" preload/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+<link rel="sitemap" href="/sitemap-index.xml"/>
+<link rel="alternate" type="application/rss+xml" title={SITE_TITLE} href={new URL("rss.xml", Astro.site)}/>
+<link rel="canonical" href={canonicalURL}/>
+<meta name="generator" content={Astro.generator}/>
 
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="sitemap" href="/sitemap-index.xml" />
-<link
-	rel="alternate"
-	type="application/rss+xml"
-	title={SITE_TITLE}
-	href={new URL('rss.xml', Astro.site)}
-/>
-<meta name="generator" content={Astro.generator} />
+<title>{fullTitle}</title>
+<meta name="description" content={description}/>
 
-<link rel="canonical" href={canonicalURL} />
+<meta property="og:type" content="website"/>
+<meta property="og:url" content={Astro.url}/>
+<meta property="og:title" content={title}/>
+<meta property="og:description" content={description}/>
+<meta property="og:image" content={imageURL}/>
 
-<title>{titleWebsite}</title>
-<meta name="title" content={title} />
-<meta name="description" content={description} />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:url" content={Astro.url}/>
+<meta name="twitter:title" content={title}/>
+<meta name="twitter:description" content={description}/>
+<meta name="twitter:image" content={imageURL}/>
 
-<meta property="og:type" content="website" />
-<meta property="og:url" content={Astro.url} />
-<meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image.src, Astro.url)} />
-
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={Astro.url} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image.src, Astro.url)} />
-
-<script defer src="https://stats.webkulig.pl/script.js" data-website-id="ad917dc5-1c57-4be6-918c-14d6321c406f"></script>
+<script defer src="https://stats.webkulig.pl/script.js" data-website-id="ad917dc5-1c57-4be6-918c-14d6321c406f"/>

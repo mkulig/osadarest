@@ -1,19 +1,6 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-@layer components {
-	html,
-	body {
-		scrollbar-width: thin;
-		scrollbar-color: rgba(black, 0.15) transparent;
-	}
-
-	.c-breadcrumbs__link[aria-disabled="true"] {
-		pointer-events: none;
-		cursor: default;
-	}
-}
-
 @theme {
 	--font-sans: var(--font-satoshi), Arial, sans-serif;
 }
@@ -31,13 +18,23 @@
 	animation-range: 0vh 40vh;
 
 	@media (prefers-reduced-motion: reduce) {
-		/*@apply animate-none;*/
+		animation: none;
 	}
 }
 
 @layer components {
-	.prose > *,
-	.fade-up {
+	html,
+	body {
+		scrollbar-width: thin;
+		scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
+	}
+
+	.c-breadcrumbs__link[aria-disabled="true"] {
+		pointer-events: none;
+		cursor: default;
+	}
+
+	.prose > * {
 		@apply fade-up;
 	}
 }

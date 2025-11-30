@@ -16,63 +16,61 @@ type Props = CollectionEntry<"apartments">;
 
 const room = Astro.props;
 const { Content } = await render(room);
+
+const details = [
+	{ label: "Maksymalna liczba gości", value: `${room.data.capacity} osoby` },
+	{ label: "Metraż", value: `${room.data.areaM2} m²` },
+	{ label: "Typy łóżek", value: room.data.beds },
+	{
+		label: "Udogodnienia",
+		value: room.data.amenities.map((a) => a.label).join(", "),
+	},
+];
 ---
 
 <Layout title={`${room.data.title} apartament`} description={room.data.description}>
     <article>
-		<MainHeader>
+        <MainHeader>
             <span slot="title">
-                <span class="inline-block">Odkryj
-                    <span class={`relative ${room.data.color.text}`} >
-                        <svg aria-hidden="true" viewBox="0 0 418 42" class={`absolute top-2/3 left-0 h-[0.58em] w-full ${room.data.color.fill}`} preserveAspectRatio="none"><path d="M203.371.916c-26.013-2.078-76.686 1.963-124.73 9.946L67.3 12.749C35.421 18.062 18.2 21.766 6.004 25.934 1.244 27.561.828 27.778.874 28.61c.07 1.214.828 1.121 9.595-1.176 9.072-2.377 17.15-3.92 39.246-7.496C123.565 7.986 157.869 4.492 195.942 5.046c7.461.108 19.25 1.696 19.17 2.582-.107 1.183-7.874 4.31-25.75 10.366-21.992 7.45-35.43 12.534-36.701 13.884-2.173 2.308-.202 4.407 4.442 4.734 2.654.187 3.263.157 15.593-.78 35.401-2.686 57.944-3.488 88.365-3.143 46.327.526 75.721 2.23 130.788 7.584 19.787 1.924 20.814 1.98 24.557 1.332l.066-.011c1.201-.203 1.53-1.825.399-2.335-2.911-1.31-4.893-1.604-22.048-3.261-57.509-5.556-87.871-7.36-132.059-7.842-23.239-.254-33.617-.116-50.627.674-11.629.54-42.371 2.494-46.696 2.967-2.359.259 8.133-3.625 26.504-9.81 23.239-7.825 27.934-10.149 28.304-14.005.417-4.348-3.529-6-16.878-7.066Z"></path></svg>
-                    <span class="relative font-bold">{room.data.title}</span></span>
-                    <span class="inline-block">apartament</span>
+                Odkryj
+                <span class={`relative ${room.data.color.text}`}>
+                    <svg aria-hidden="true" viewBox="0 0 418 42" class={`absolute top-2/3 left-0 h-[0.58em] w-full ${room.data.color.fill}`} preserveAspectRatio="none">
+                        <path d="M203.371.916c-26.013-2.078-76.686 1.963-124.73 9.946L67.3 12.749C35.421 18.062 18.2 21.766 6.004 25.934 1.244 27.561.828 27.778.874 28.61c.07 1.214.828 1.121 9.595-1.176 9.072-2.377 17.15-3.92 39.246-7.496C123.565 7.986 157.869 4.492 195.942 5.046c7.461.108 19.25 1.696 19.17 2.582-.107 1.183-7.874 4.31-25.75 10.366-21.992 7.45-35.43 12.534-36.701 13.884-2.173 2.308-.202 4.407 4.442 4.734 2.654.187 3.263.157 15.593-.78 35.401-2.686 57.944-3.488 88.365-3.143 46.327.526 75.721 2.23 130.788 7.584 19.787 1.924 20.814 1.98 24.557 1.332l.066-.011c1.201-.203 1.53-1.825.399-2.335-2.911-1.31-4.893-1.604-22.048-3.261-57.509-5.556-87.871-7.36-132.059-7.842-23.239-.254-33.617-.116-50.627.674-11.629.54-42.371 2.494-46.696 2.967-2.359.259 8.133-3.625 26.504-9.81 23.239-7.825 27.934-10.149 28.304-14.005.417-4.348-3.529-6-16.878-7.066Z"/>
+                    </svg>
+                    <strong class="relative">{room.data.title}</strong>
                 </span>
+                apartament
             </span>
-            <span slot="description">
-                {room.data.description}
-            </span>
+            <span slot="description">{room.data.description}</span>
         </MainHeader>
 
-       <GalleryMosaic gallery={room.data.gallery}/>
+        <GalleryMosaic gallery={room.data.gallery}/>
 
-<div class="grid md:grid-cols-2 gap-4 py-4 divide-y divide-gray-200 dark:divide-gray-800 fade-up">
-    <div class="px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-        <dt class=" text-gray-500">Maksymalna liczba gości</dt>
-        <dd class="mt-1  text-gray-900 dark:text-gray-100 sm:col-span-2 sm:mt-0">{room.data.capacity} osoby</dd>
-    </div>
-    <div class="px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-        <dt class=" text-gray-500">Metraż</dt>
-        <dd class="mt-1  text-gray-900 dark:text-gray-100 sm:col-span-2 sm:mt-0">{room.data.areaM2} m²</dd>
-    </div>
-    <div class="px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-        <dt class=" text-gray-500">Typy łóżek</dt>
-        <dd class="mt-1  text-gray-900 dark:text-gray-100 sm:col-span-2 sm:mt-0">{room.data.beds}</dd>
-    </div>
-    <div class="px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-        <dt class=" text-gray-500">Udogodnienia</dt>
-        <dd class="mt-1  text-gray-900  dark:text-gray-100 sm:col-span-2 sm:mt-0">{room.data.amenities.map(a => a.label).join(', ')}</dd>
-    </div>
-    <div></div>
-</div>
+        <dl class="grid md:grid-cols-2 gap-4 py-4 divide-y divide-gray-200 dark:divide-gray-800 fade-up">
+            {details.map(({ label, value }) => (
+                <div class="px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt class="text-gray-500">{label}</dt>
+                    <dd class="mt-1 text-gray-900 dark:text-gray-100 sm:col-span-2 sm:mt-0">{value}</dd>
+                </div>
+            ))}
+        </dl>
 
-       <div class="prose dark:prose-invert md:prose-xl mx-auto prose-p:text-justify">
-           <Content />
-		</div>
+        <div class="prose dark:prose-invert md:prose-xl mx-auto prose-p:text-justify">
+            <Content/>
+        </div>
 
-<div class={`max-w-5xl py-16 my-10 md:px-10 max-md:text-center md:mx-auto flex flex-col md:flex-row items-center justify-between bg-linear-to-b ${room.data.color.gradient} rounded-2xl text-white fade-up`}>
-    <div>
-        <h3
-            class="text-4xl md:text-[46px] md:leading-[60px] font-semibold bg-linear-to-r from-white to-white/90 text-transparent bg-clip-text test-shadow-xs">
-                Gotowy na odpoczynek?
-        </h3>
-        <p class="bg-linear-to-r from-white to-white/80 text-transparent bg-clip-text text-lg test-shadow-xs">
-            Twój czas na relaks w <span class="border-b border-solid border-white/20">apartamencie {room.data.title.toLocaleLowerCase()}</span> zaczyna się właśnie tutaj.
-        </p>
-    </div>
-    <a href={`tel:${CONTACT_PHONE}`} class={`px-12 py-3 ${room.data.color.text} bg-white rounded-full text-lg mt-4 font-bold text-shadow-2xs hover:scale-102`}>
-        Zarezerwuj pobyt<br/>{CONTACT_PHONE_DISPLAY}
-    </a>
-</div>
+        <aside class={`max-w-5xl py-16 my-10 md:px-10 max-md:text-center md:mx-auto flex flex-col md:flex-row items-center justify-between bg-linear-to-b ${room.data.color.gradient} rounded-2xl text-white fade-up`}>
+            <div>
+                <h3 class="text-4xl md:text-[46px] md:leading-[60px] font-semibold bg-linear-to-r from-white to-white/90 text-transparent bg-clip-text">
+                    Gotowy na odpoczynek?
+                </h3>
+                <p class="bg-linear-to-r from-white to-white/80 text-transparent bg-clip-text text-lg">
+                    Twój czas na relaks w <span class="border-b border-white/20">{room.data.title.toLowerCase()}</span> zaczyna się właśnie tutaj.
+                </p>
+            </div>
+            <a href={`tel:${CONTACT_PHONE}`} class={`px-12 py-3 ${room.data.color.text} bg-white rounded-full text-lg mt-4 font-bold hover:scale-102`}>
+                Zarezerwuj pobyt<br/>{CONTACT_PHONE_DISPLAY}
+            </a>
+        </aside>
     </article>
 </Layout>

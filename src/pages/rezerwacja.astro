@@ -5,42 +5,35 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout
-	title="Rezerwacja apartamentów"
-	description="Zarezerwuj nocleg w Osadzie REST w Tyliczu. Komfortowe apartamenty blisko stoku. Skontaktuj się telefonicznie lub mailowo – szybka odpowiedź."
+    title="Rezerwacja apartamentów"
+    description="Zarezerwuj nocleg w Osadzie REST w Tyliczu. Komfortowe apartamenty blisko stoku. Skontaktuj się telefonicznie lub mailowo – szybka odpowiedź."
 >
     <section class="relative isolate bg-linear-to-br from-zinc-50 via-white to-red-100 dark:from-gray-900 dark:via-zinc-950 dark:to-red-900 my-8 pb-20 rounded-2xl shadow-xs dark:shadow-white/20">
-      <div class="container mx-auto max-w-3xl px-6 text-center">
-          <MainHeader>
-              <span slot="title">Rezerwacja pobytu w Osada REST</span>
-              <span slot="description">
-                  Zarezerwuj nocleg w naszych <strong>apartamentach w Tyliczu</strong>.
-                  Skontaktuj się z nami telefonicznie lub mailowo – odpowiemy szybko i pomożemy wybrać najlepszą ofertę.
-              </span>
-          </MainHeader>
+        <div class="container mx-auto max-w-3xl px-6 text-center">
+            <MainHeader>
+                <span slot="title">Rezerwacja pobytu w Osada REST</span>
+                <span slot="description">
+                    Zarezerwuj nocleg w naszych <strong>apartamentach w Tyliczu</strong>. Skontaktuj się z nami telefonicznie lub mailowo – odpowiemy szybko i pomożemy wybrać najlepszą ofertę.
+                </span>
+            </MainHeader>
 
-        <div class="mb-12 space-y-4">
-          <p class="space-x-8 space-y-2 text-lg">
-             <a href={`tel:${CONTACT_PHONE}`} class="font-semibold text-[#ff6a00] hover:underline inline-block">📞 {CONTACT_PHONE_DISPLAY
-                }</a>
-             <a href={`mailto:${CONTACT_EMAIL}`} class="font-semibold text-[#ff6a00] hover:underline inline-block">✉️ {CONTACT_EMAIL}</a>
-          </p>
+            <address class="mb-12 not-italic text-lg space-x-8">
+                <a href={`tel:${CONTACT_PHONE}`} class="font-semibold text-[#ff6a00] hover:underline inline-block">📞 {CONTACT_PHONE_DISPLAY}</a>
+                <a href={`mailto:${CONTACT_EMAIL}`} class="font-semibold text-[#ff6a00] hover:underline inline-block">✉️ {CONTACT_EMAIL}</a>
+            </address>
+
+            <nav class="flex flex-wrap justify-center gap-4">
+                <a href={`tel:${CONTACT_PHONE}`} class="px-8 py-4 bg-linear-to-l from-[#ff6a00] to-[#ee0979] text-2xl text-white font-semibold rounded-lg shadow hover:brightness-105 transition">
+                    Zadzwoń i zarezerwuj
+                </a>
+                <a href={`mailto:${CONTACT_EMAIL}`} class="rounded-lg bg-white dark:bg-black border border-gray-300 dark:border-gray-700 px-8 py-4 text-lg font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900 transition">
+                    Napisz do nas
+                </a>
+            </nav>
+
+            <p class="mt-12 text-black/50 dark:text-white/50">
+                Pobyty powyżej <strong>7 nocy</strong> objęte są rabatem – skontaktuj się, aby poznać szczegóły.
+            </p>
         </div>
-
-        <div class="flex flex-wrap justify-center gap-4">
-          <a href={`tel:${CONTACT_PHONE}`}
-             class="px-8 py-4 bg-linear-to-l from-[#ff6a00] to-[#ee0979] text-2xl text-white font-semibold rounded-lg shadow hover:brightness-105  transition">
-            Zadzwoń i zarezerwuj
-          </a>
-          <a href={`mailto:${CONTACT_EMAIL}`}
-             class="rounded-lg bg-white dark:bg-black border border-gray-300 dark:border-gray-700 px-8 py-4 text-lg font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900 transition">
-            Napisz do nas
-          </a>
-        </div>
-
-        <p class="mt-12 text-black/50 dark:text-white/50">
-          Pobyty powyżej <strong>7 nocy</strong> objęte są rabatem – skontaktuj się, aby poznać szczegóły.
-        </p>
-
-      </div>
     </section>
 </Layout>

@@ -48,88 +48,75 @@ import { Picture } from "astro:assets";
 const { title, subtitle, items } = Astro.props;
 ---
 
-<section aria-labelledby="apartments-heading" class="py-10 sm:py-12">
-  <div class="mx-auto container px-4 sm:px-6 lg:px-8">
-    <div class="mx-auto max-w-2xl text-center">
-      <h2 id="apartments-heading" class="text-2xl font-semibold tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl fade-up">
-          {title}
-      </h2>
-      <p class="mt-2 text-gray-700 dark:text-gray-300 propose fade-up">{subtitle}</p>
-    </div>
-
+<section aria-labelledby="apartments-heading" class="py-10 sm:py-12 mx-auto container px-4 sm:px-6 lg:px-8">
+    <header class="mx-auto max-w-2xl text-center">
+        <h2 id="apartments-heading" class="text-2xl font-semibold tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl fade-up">{title}</h2>
+        <p class="mt-2 text-gray-700 dark:text-gray-300 fade-up">{subtitle}</p>
+    </header>
 
     <div class="mt-8 grid grid-cols-1 gap-6 sm:mt-10 lg:grid-cols-3">
-      {items.map((it) => {
-        const url = `/apartamenty/${it.slug}`;
+        {items.map((it) => {
+            const url = `/apartamenty/${it.slug}`;
+            return (
+                <article class="group flex flex-col overflow-hidden rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-900 shadow-sm transition hover:shadow-md fade-up">
+                    <a href={url} class="relative block aspect-4/3 overflow-hidden">
+                        <Picture
+                            src={it.cover}
+                            alt={it.coverAlt}
+                            loading="lazy"
+                            quality={50}
+                            formats={["avif","webp"]}
+                            class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                            sizes="(min-width: 64rem) 33vw, 100vw"
+                        />
+                        {it.priceFrom && it.currency && (
+                            <span class="absolute left-3 top-3 rounded-md bg-white/90 px-2 py-1 text-xs font-semibold text-gray-900 shadow-sm">
+                                od {it.priceFrom} {it.currency}/noc
+                            </span>
+                        )}
+                    </a>
 
-        return (
-          <article class="group flex flex-col overflow-hidden rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-900 shadow-sm transition hover:shadow-md fade-up">
-            <a href={url} class="relative block aspect-4/3 w-full overflow-hidden">
-                <Picture
-                    src={it.cover}
-                    alt={it.coverAlt}
-                    loading="lazy"
-                    quality={50}
-                    formats={["avif","webp"]}
-                    fallbackFormat="webp"
-                    class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
-                    sizes="(min-width: 64rem) 33vw, 100vw"
-                />
-              {it.priceFrom && it.currency && (
-                <div class="absolute left-3 top-3 rounded-md bg-white/90 px-2 py-1 text-xs font-semibold text-gray-900 shadow-sm">
-                  od {it.priceFrom} {it.currency}/noc
-                </div>
-              )}
-            </a>
+                    <div class="flex flex-1 flex-col p-4">
+                        <h3 class="text-2xl font-semibold">
+                            <a href={url} class={`hover:underline underline-offset-2 ${it.color.text}`}>{it.title}</a>
+                        </h3>
+                        <p class="text-gray-500 text-sm pb-2">{it.description}</p>
 
-            <div class="flex flex-1 flex-col p-4">
-              <header>
-                <h3 class="text-2xl font-semibold">
-                  <a href={url} class={`hover:underline underline-offset-2 ${it.color.text}`}>{it.title}</a>
-                </h3>
-                <p class="text-gray-500 text-sm pb-2">{it.description}</p>
+                        <dl class="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-gray-700 dark:text-gray-300">
+                            {typeof it.capacity === "number" && <dd title="Liczba gości">👥 {it.capacity} os.</dd>}
+                            {it.beds && <dd title="Typy łóżek">🛏️ {it.beds}</dd>}
+                            {typeof it.areaM2 === "number" && <dd title="Metraż">📐 {it.areaM2} m²</dd>}
+                        </dl>
 
-                <div class="mt-1 flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-sm text-gray-700 dark:text-gray-300">
-                  {typeof it.capacity === "number" && <strong title="Liczba gości">👥 {it.capacity} os.</strong>}
-                  {it.beds && <strong title="Typy łóżek">🛏️ {it.beds}</strong>}
-                  {typeof it.areaM2 === "number" && <strong title="Metraż">📐 {it.areaM2} m²</strong>}
-                </div>
-              </header>
+                        <hr class="my-2 text-gray-200 dark:text-gray-700"/>
 
-            <hr class="my-2 text-gray-200 dark:text-gray-700"/>
+                        {it.amenities?.length > 0 && (
+                            <ul class="grid grid-cols-2 gap-2 text-sm text-gray-700 dark:text-gray-300">
+                                {it.amenities.slice(0, 10).map((a) => (
+                                    <li class="flex items-center gap-2">
+                                        {a.icon && <span aria-hidden="true">{a.icon}</span>}
+                                        <span>{a.label}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
 
-              {it.amenities?.length ? (
-                <ul class="grid grid-cols-2 gap-2 text-sm text-gray-700 dark:text-gray-300">
-                  {it.amenities.slice(0, 10).map((a) => (
-                    <li class="flex items-center gap-2">
-                      {a.icon && <span class="leading-none" aria-hidden="true">{a.icon}</span>}
-                      <span>{a.label}</span>
-                    </li>
-                  ))}
-                </ul>
-              ) : null}
+                        <footer class="mt-4 flex items-end justify-end grow">
+                            {it.priceFrom && it.currency && (
+                                <p class="text-base font-semibold text-gray-900 dark:text-gray-100">
+                                    od {it.priceFrom} {it.currency} <span class="text-sm font-normal text-gray-600 dark:text-gray-400">/ noc</span>
+                                </p>
+                            )}
 
-              <div class="mt-4 flex items-center justify-between">
-                {it.priceFrom && it.currency ? (
-                  <p class="text-base font-semibold text-gray-900 dark:text-gray-100">
-                    <span class="mr-1 align-middle">od</span>
-                    <span class="align-middle">{it.priceFrom} {it.currency}</span>
-                    <span class="ml-1 text-sm font-normal text-gray-600 dark:text-gray-400">/ noc</span>
-                  </p>
-                ) : <span />}
-
-                <a
-                  href={url}
-                  class="inline-flex items-center rounded-lg border border-gray-900 dark:border-gray-100 px-3 py-2 font-semibold text-gray-900 dark:text-gray-100 transition dark:hover:bg-gray-100 hover:bg-gray-900 hover:text-white  dark:hover:text-black focus:outline-none focus:ring-2 focus:ring-gray-900  dark:focus:ring-gray-100 focus:ring-offset-2"
-                  title={`Zobacz szczegóły apartamentu ${it.title}`}
-                >
-                  Zobacz szczegóły
-                </a>
-              </div>
-            </div>
-          </article>
-        );
-      })}
+                                <a href={url}
+                                class="inline-flex items-center rounded-lg border border-gray-900 dark:border-gray-100 px-3 py-2 font-semibold text-gray-900 dark:text-gray-100 transition hover:bg-gray-900 hover:text-white dark:hover:bg-gray-100 dark:hover:text-black focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-gray-100 focus:ring-offset-2"
+                            >
+                                Zobacz apartament {it.title}
+                            </a>
+                        </footer>
+                    </div>
+                </article>
+            );
+        })}
     </div>
-  </div>
 </section>

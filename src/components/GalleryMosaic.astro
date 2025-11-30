@@ -1,45 +1,31 @@
 ---
 import { Picture } from "astro:assets";
 
-interface ImgItem {
-	src: string;
-	alt: string;
+interface Props {
+	gallery?: { src: string; alt: string }[];
 }
-const { gallery = [] as ImgItem[] } = Astro.props;
 
-// helper: czy dany indeks jest „duży” wg wzoru [S,S,L,L]
-const isLarge = (i: number) => {
-	const m = i % 4;
-	return m === 2 || m === 3; // 3. i 4. w bloku
-};
+const { gallery = [] } = Astro.props;
 ---
 
 {gallery.length > 0 && (
-  <section class="container mx-auto py-4 sm:py-6">
-    <div
-      class="grid md:grid-cols-4 gap-4"
-    >
-      {gallery.map((img: any, i: number) => (
-        <figure
-          class={[
-            isLarge(i) ? "md:col-span-2 row-span-2" : "md:col-span-1",
-            "relative overflow-hidden rounded-lg 2xl:rounded-2xl hover:scale-102 transition duration-300 ease-in-out fade-up",
-            isLarge(i)
-              ? "aspect-16/10 md:aspect-video"
-              : "aspect-4/3 md:aspect-5/4"
-          ].join(" ")}
-        >
-          <Picture
-            src={img.src}
-            alt={img.alt ?? "Galeria"}
-            formats={["avif","webp"]}
-            fallbackFormat="webp"
-            loading="lazy"
-            class="absolute inset-0 h-full w-full object-cover object-center"
-            sizes={isLarge(i) ? "(min-width: 64rem) 50vw, 100vw" : "(min-width: 64rem) 25vw, 100vw"}
-          />
-        </figure>
-      ))}
-    </div>
-  </section>
+    <section class="container mx-auto py-4 sm:py-6">
+        <div class="grid md:grid-cols-4 gap-4">
+            {gallery.map((img, i) => {
+                const isLarge = i % 4 === 2 || i % 4 === 3;
+                return (
+                    <figure class={`relative overflow-hidden rounded-lg 2xl:rounded-2xl hover:scale-102 transition duration-300 fade-up ${isLarge ? "md:col-span-2 row-span-2 aspect-16/10 md:aspect-video" : "md:col-span-1 aspect-4/3 md:aspect-5/4"}`}>
+                        <Picture
+                            src={img.src}
+                            alt={img.alt || "Galeria"}
+                            formats={["avif","webp"]}
+                            loading="lazy"
+                            class="absolute inset-0 h-full w-full object-cover"
+                            sizes={isLarge ? "(min-width: 64rem) 50vw, 100vw" : "(min-width: 64rem) 25vw, 100vw"}
+                        />
+                    </figure>
+                );
+            })}
+        </div>
+    </section>
 )}

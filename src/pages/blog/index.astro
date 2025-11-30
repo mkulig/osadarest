@@ -14,28 +14,29 @@ const posts = (await getCollection("blog")).sort(
 <Layout title="Informacje i inspiracje dla gości" description="Osada REST Blog – znajdziesz tu porady, inspiracje i wiadomości dla turystów. Tylicz i okolice oczami gospodarzy.">
     <MainHeader>
         <span slot="title">Blog</span>
-        <span slot="description">Dzielimy się aktualnościami, wskazówkami dla turystów itd.
-        Warto tu wracać, aby być na bieżąco i lepiej zaplanować swój pobyt w górach. </span>
+        <span slot="description">Dzielimy się aktualnościami, wskazówkami dla turystów itd. Warto tu wracać, aby być na bieżąco i lepiej zaplanować swój pobyt w górach.</span>
     </MainHeader>
 
-	<section class="grid md:grid-cols-3 gap-10">
-			{
-				posts.map((post) => (
-					<div class="hover:brightness-105">
-						<a href={`/blog/${post.id}`}>
-						{post.data.heroImage && (
-							<Picture src={post.data.heroImage} alt={post.data.title}  class="w-full rounded-xl dark:shadow-white/20 shadow-lg" quality={50} formats={["avif","webp"]}
-            fallbackFormat="webp"/>
-						)}
-
-							<p class="text-gray-400 dark:text-gray-600 text-end py-2">
-								Opublikowano <FormattedDate date={post.data.pubDate} />
-							</p>
-							<h2 class="text-2xl text-gray-900 dark:text-gray-100">{post.data.title}</h2>
-							<h4 class="text-gray-600 dark:text-gray-400">{post.data.description}</h4>
-						</a>
-					</div>
-				))
-			}
-	</section>
+    <section class="grid md:grid-cols-3 gap-10">
+        {posts.map((post) => (
+            <article class="hover:brightness-105">
+                <a href={`/blog/${post.id}`}>
+                    {post.data.heroImage && (
+                        <Picture
+                            src={post.data.heroImage}
+                            alt={post.data.title}
+                            class="w-full rounded-xl shadow-lg dark:shadow-white/20"
+                            quality={50}
+                            formats={["avif","webp"]}
+                        />
+                    )}
+                    <p class="text-gray-400 dark:text-gray-600 text-end py-2">
+						Opublikowano <FormattedDate date={post.data.pubDate} />
+					</p>
+                    <h2 class="text-2xl text-gray-900 dark:text-gray-100">{post.data.title}</h2>
+                    <p class="text-gray-600 dark:text-gray-400">{post.data.description}</p>
+                </a>
+            </article>
+        ))}
+    </section>
 </Layout>

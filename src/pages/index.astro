@@ -24,45 +24,43 @@ const featured = all
 
 const items = featured.map(toCardProps);
 const offersLd = featured.map(toOfferLD);
+
+const usps = [
+	{ icon: "🍳", text: "Aneks kuchenny i pełne wyposażenie" },
+	{ icon: "🛏️", text: "Wygodne łóżka i przytulne sypialnie" },
+	{ icon: "🧴", text: "Ręczniki i podstawowe kosmetyki" },
+	{ icon: "🧒", text: "Przyjazne rodzinom z dziećmi" },
+	{ icon: "📶", text: "Szybkie i stabilne Wi-Fi" },
+	{ icon: "🚗", text: "Bezpłatny parking przy obiekcie" },
+	{ icon: "🎿", text: "Przechowalnia sprzętu (narty, rowery)" },
+	{ icon: "🍖", text: "Grill do dyspozycji Gości" },
+	{ icon: "🌳", text: "Piękny ogród otaczający obiekt" },
+];
 ---
 
 <!DOCTYPE html>
 <html lang="pl">
-	<Head>
-		<BaseHead title="Nowoczesne apartamenty w Tyliczu blisko stoku" description={SITE_DESCRIPTION} />
-	</Head>
-	<body class="bg-white dark:bg-gray-900">
-		<Header items={items} />
-
-    	<main>
-    		<Hero />
+    <Head>
+        <BaseHead title="Nowoczesne apartamenty w Tyliczu blisko stoku" description={SITE_DESCRIPTION}/>
+    </Head>
+    <body class="bg-white dark:bg-gray-900">
+        <Header items={items}/>
+        <main>
+            <Hero/>
             <ApartmentsPreview
                 title="Wybierz idealny nocleg w Osada REST"
                 subtitle="Komfortowe, w pełni wyposażone apartamenty blisko atrakcji na sezon zimowy oraz letni."
                 items={items}
             />
-
-            <WhyUs />
-            <AboutPreview
-                usps={[
-                { icon: "🍳", text: "Aneks kuchenny i pełne wyposażenie" },
-                { icon: "🛏️", text: "Wygodne łóżka i przytulne sypialnie" },
-                { icon: "🧴", text: "Ręczniki i podstawowe kosmetyki" },
-                { icon: "🧒", text: "Przyjazne rodzinom z dziećmi" },
-                { icon: "📶", text: "Szybkie i stabilne Wi-Fi" },
-                { icon: "🚗", text: "Bezpłatny parking przy obiekcie" },
-                { icon: "🎿", text: "Przechowalnia sprzętu (narty, rowery)" },
-                { icon: "🍖", text: "Grill do dyspozycji Gości" },
-                { icon: "🌳", text: "Piękny ogród otaczający obiekt" },
-                ]}
-            />
-            <OffersPreview />
+            <WhyUs/>
+            <AboutPreview usps={usps}/>
+            <OffersPreview/>
             <NearbyAttractions/>
-            <Reviews />
-            <Location />
-            <FAQ />
-            <CtaBooking />
-    	</main>
-		<Footer />
-	</body>
+            <Reviews/>
+            <Location/>
+            <FAQ/>
+            <CtaBooking/>
+        </main>
+        <Footer/>
+    </body>
 </html>
