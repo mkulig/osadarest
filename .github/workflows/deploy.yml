@@ -32,5 +32,5 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           source: "dist/*"
-          target: "~/docker/static/osadarest/public"
+          target: "~/docker/static-sites/sites/osadarest"
           strip_components: 1
